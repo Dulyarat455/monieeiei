@@ -8,8 +8,16 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        'fffef9': '#FFFEF9',
-        'fae392': '#FAE392',
+        'FFFEF9': '#FFFEF9',
+        'FAE392': '#FAE392',
+        'D8B4F8': '#D8B4F8',
+        'CA8DFF': '#CA8DFF',
+      },
+      textColor: {
+        'CA8DFF': '#CA8DFF', // Define your custom text color here
+      },
+      borderColor: {
+        'CA8DFF': '#CA8DFF', // Define your custom border color here
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

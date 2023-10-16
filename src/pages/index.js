@@ -43,11 +43,27 @@ export default function Home() {
 
 
 
-<div className={`min-h-screen bg-fffef9 ${inter.className}`}>
+<div className={`min-h-screen bg-FFFEF9 ${inter.className}`}>
       <div className="flex flex-col items-center justify-center h-full pt-10">
         <Image src={logo} alt="logo" width={280} height={280} priority />
         <Image src={nameweb} alt="nameweb" width={430} height={116} priority />
-        <p className="mt-4 text-lg">Want to stay in touch</p>
+        {/* <p className="mt-4 text-lg">Welcome</p> */}
+        <br/>
+        <br/>
+        <br/>
+        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 bg-D8B4F8 text-white rounded " onClick={ ()=>{
+               
+               
+             }}>
+               SIGN UP WITH EMAIL
+             </button>
+        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 border-2 border-CA8DFF text-CA8DFF rounded-md " onClick={ ()=>{
+               
+               
+              }}>
+                SIGN IN
+        </button>
+
       </div>
     </div>
   )
