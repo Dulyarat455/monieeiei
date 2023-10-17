@@ -5,15 +5,16 @@ import Image from "next/image";
 import logo2 from  '../../public/images/logo2.png'
 import { Rubik } from 'next/font/google'
 import { Input } from "postcss";
-
+import nameweb from  '../../public/images/nameweb.png'
+const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 
 
 export default function RegisterPage() {
 
 return(
-   
-       <div className="flex flex-col items-center justify-center h-full pt-10 bg-[#FFFEF9]">
+       <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
+       <div className="flex flex-col items-center justify-center h-full pt-10">
        <Image alt="logo2" src={logo2} className="ml-[1rem]"></Image> 
        <div className="  mt-2 font-medium font-rubik text-3xl">Sign up</div>
        <div className=" mt-2 font-normal font-rubik text-[#757575]">Creating an account taking your</div>
@@ -29,6 +30,7 @@ return(
         <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Fill the text here" type="password" id="cfpassword" ></input>
        </form>
        <button className="bg-[#D8B4F8] mt-10 ml-20 w-32 h-12 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">CONTINUE</button>
+       </div>
        </div>
        </div>
    
