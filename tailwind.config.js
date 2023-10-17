@@ -10,7 +10,7 @@ module.exports = {
       backgroundColor: {
         'FFFEF9': '#FFFEF9',
         'FAE392': '#FAE392',
-        'D8B4F8': '#D8B4F8',
+        
         'CA8DFF': '#CA8DFF',
       },
       textColor: {
@@ -24,6 +24,10 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        rubik: ['Rubik'],
+       
+      }
     },
   },
   plugins: [],
