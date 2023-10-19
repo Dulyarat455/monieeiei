@@ -21,7 +21,6 @@ export default  async  function Register (req,res)  {
         user_email,
         user_firstname,
         user_password,
-        confirm_password,
         user_phonenumber,
         user_lastname,
         user_username,
@@ -29,6 +28,7 @@ export default  async  function Register (req,res)  {
         } = req.body;
 
 
+      console.log("api = ",user_email)
      if (req.method !== 'POST') {
             return res.status(405).json({ message: 'Method not allowed', success: false });
           }
@@ -45,9 +45,7 @@ export default  async  function Register (req,res)  {
             return ( res.status(400).json({message: 'This email can not to use', success: false}))
         }
 
-        if( user_password !== confirm_password){
-          return res.status(405).json({ message: 'Comfirm password is invalid', success: false });
-        }
+        
       
 
         const account_id = uuidv4();
