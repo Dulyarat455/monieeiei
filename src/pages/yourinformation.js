@@ -13,13 +13,13 @@ const inter = Rubik({ subsets: ['latin'], weight: ['400'] })
 export default function Yourinformation() {
     const router = useRouter();
     const { data } = router.query;
-    const parsedData = data ? JSON.parse(decodeURIComponent(data)) : null;
+    const parsedData = data ? JSON.parse(decodeURIComponent(data)) : {};
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
     const [info, setInfo] = useState({
 
-        user_email: parsedData["user_email"],
-        user_password: parsedData["user_password"],
+        user_email: parsedData["user_email"] || "",
+        user_password: parsedData["user_password"] || "",
         user_username:"",
         user_firstname:"",
         user_lastname:"",
