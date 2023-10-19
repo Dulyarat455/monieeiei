@@ -4,7 +4,21 @@ import logo from  '../../public/images/logo.png'
 import nameweb from  '../../public/images/nameweb.png'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
+import { useRouter } from "next/router";
+
 export default function Home() {
+  const router = useRouter();
+
+  const  moveRegister  =  (e) => {
+      router.push("/register");
+  };
+
+  const  moveLogin  =  (e) => {
+      router.push("/login");
+  };
+
+
+
   return (
 //     <div
 //       className={`flex min-h-screen flex-col items-center justify-between   bg-fffef9 ${inter.className}`}
@@ -51,14 +65,14 @@ export default function Home() {
         <br/>
         <br/>
         <br/>
-        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 bg-[#D8B4F8] text-white rounded " onClick={ ()=>{
-               
+        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 bg-[#D8B4F8] text-white rounded hover:bg-[#CA8DFF]" onClick={ ()=>{
+                moveRegister()
                
              }}>
                SIGN UP WITH EMAIL
              </button>
-        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 border-2 border-CA8DFF text-CA8DFF rounded-md " onClick={ ()=>{
-               
+        <button  type="submit" className=" mt-4 p-2 pl-6 pr-5 border-2 border-CA8DFF text-CA8DFF rounded-md hover:bg-[#CA8DFF] hover:text-white" onClick={ ()=>{
+                  moveLogin()
                
               }}>
                 SIGN IN
