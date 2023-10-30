@@ -1,9 +1,8 @@
 import React from "react";
-import logo from  '../../public/images/logo2.png'
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
-import Navbar from "../component/navbar";
-import icon from  '../../public/images/icon.svg'
+import Navbar from '../../src/component/navbar';
+import Icon from  '../../public/images/Icon.svg'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function createworkspace2(){
 
@@ -16,7 +15,7 @@ export default function createworkspace2(){
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-5xl">Create a</div>
             <a href="https://www.youtube.com/watch?v=nlPYear59oQ">
-            <Image alt="icon" src={icon} className="ml-10 mt-10"></Image> 
+            <Image alt="Icon" src={Icon} className="ml-10 mt-10"></Image> 
             </a>
             </div>
             <div className="font-rubik text-5xl ml-[4.3rem] mt-3">Workspace</div>
