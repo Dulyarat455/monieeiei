@@ -9,16 +9,16 @@ const Navbar = () => {
   return (
     <nav className='mt-5 ml-5 inline-flex'> 
     <div>
-    <a>
+    <a href={"/private"}>
     <Image alt="logo2" src={logo2} className="w-12 mt-4"></Image> 
     </a>
     </div>
     <div className=' ml-44 mt-7'>
-    <a>
+    <a href={"/notification"}>
     <Image alt="noti" src={noti} className=""></Image> 
     </a>
     </div>
-    <a>
+    <a href={"/account"}>
     <div className='mt-4 ml-3'><Image alt="avatar1" src={avatar1} className=" w-11 h-11"></Image> </div>
     </a>  
     </nav>
