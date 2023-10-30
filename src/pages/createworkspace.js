@@ -1,8 +1,7 @@
 import React from "react";
-import logo from  '../../public/images/logo2.png'
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
-import Navbar from '../../src/component/navbar';
+import Navbar from '../component/navbar';
 import Icon from  '../../public/images/Icon.svg'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function createworkspace(){

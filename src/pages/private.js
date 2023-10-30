@@ -1,9 +1,9 @@
 import React from "react";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
-import Navbar from "../component/navbar";
+import Navbar from '../component/navbar';
 import { Rubik } from 'next/font/google'
 import alertcircle from '../../public/images/alertcircle.png'
-import Image from "next/image";
+import Navbar from '../component/navbar';
 import Navbarbottom from '../../src/component/navbarbottom';
 
 export default function Private(){

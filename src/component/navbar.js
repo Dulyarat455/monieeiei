@@ -1,28 +1,33 @@
-// components/Navbar.js
+import React, {useState} from "react";
 import Link from 'next/link';
 import Image from "next/image";
-import logo2 from  '../../public/images/logo2.png'
-import noti from  '../../public/images/noti.svg'
-import avatar1 from  '../../public/images/avatar1.svg'
+import noti from '../../public/images/noti.svg'
+import user from '../../public/images/user.png'
+import logo2 from '../../public/images/logo2.png'
 
-const Navbar = () => {
-  return (
-    <nav className='mt-5 ml-5 inline-flex'> 
-    <div>
-    <a href={"/private"}>
-    <Image alt="logo2" src={logo2} className="w-12 mt-4"></Image> 
-    </a>
-    </div>
-    <div className=' ml-44 mt-7'>
-    <a href={"/notification"}>
-    <Image alt="noti" src={noti} className=""></Image> 
-    </a>
-    </div>
-    <a href={"/account"}>
-    <div className='mt-4 ml-3'><Image alt="avatar1" src={avatar1} className=" w-11 h-11"></Image> </div>
-    </a>  
-    </nav>
-  );
-};
 
-export default Navbar;
+
+export default function Navbar  (){
+
+    return(
+        <nav>
+          <div className="inline-flex mt-3">
+            <Link href={"/private"}>
+                <div>
+                    <Image src={logo2} alt="logo2" width={70} className="ml-5"/>
+                </div>
+            </Link>
+            <Link href={"/workspace"}>
+                <div>
+                    <Image src={noti} alt="noti" width={30} className="mt-5 ml-40"/>
+                </div>
+            </Link>
+            <Link href={"/account"} className="">     
+                <div>
+                    <Image src={user} alt="user" width={70} className=" ml-5 mr-5"/>
+                </div>
+            </Link>
+            </div>
+        </nav>
+    )
+}
