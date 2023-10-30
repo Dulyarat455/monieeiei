@@ -22,7 +22,7 @@ export default function createworkspace2(){
             <div className="font-rubik text-5xl ml-[4.3rem] mt-3">Workspace</div>
             <div className=" mt-14"></div>
             <form>
-            <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER'S EMAIL NO.1*</label><br></br>
+            <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER&apos;S EMAIL NO.1*</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user1@gmail.com" 
         type="email" 
@@ -30,7 +30,7 @@ export default function createworkspace2(){
         name="user_email"
         required
          />
-          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER'S EMAIL NO.2</label><br></br>
+          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER&apos;S EMAIL NO.2</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user2@gmail.com" 
         type="email" 
@@ -38,7 +38,7 @@ export default function createworkspace2(){
         name="user_email"
         required
          />
-          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER'S EMAIL NO.3</label><br></br>
+          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER&apos;S EMAIL NO.3</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user3@gmail.com" 
         type="email" 
@@ -46,7 +46,7 @@ export default function createworkspace2(){
         name="user_email"
         required
          />
-          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER'S EMAIL NO.4</label><br></br>
+          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER&apos;S EMAIL NO.4</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user4@gmail.com" 
         type="email" 
@@ -54,7 +54,7 @@ export default function createworkspace2(){
         name="user_email"
         required
          />
-          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER'S EMAIL NO.5</label><br></br>
+          <label htmlFor="email" className=" ml-14 text-[#9B7C0D] text-[20px] font-normal">USER&apos;S EMAIL NO.5</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user5@gmail.com" 
         type="email" 
