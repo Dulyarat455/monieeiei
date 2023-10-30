@@ -13,7 +13,7 @@ export default function Workspace() {
             <div className="flex flex-col items-center justify-center h-full ">
             <Navbar/> {/* Change to workspace */}
             </div>
-                <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-12">Workspace</div>
+                <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-12 items-center justify-center">Workspace</div>
                 <div className="ml-12 font-normal font-xxs font-rubik text-[#A7A7A7]">Manage your workspace finances with friends and family</div>
                 <div className="flex flex-col items-center justify-center h-full pt-12">
                     <Image src={alertcircle} alt="alertcircle" className="w-[154px] h-[154px] relative"/>
