@@ -29,7 +29,7 @@ return(
         <label for="cfpassword" className="ml-5 text-[#A7A7A7] text-xs">CONFIRM A PASSWORD*</label><br></br>
         <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Fill the text here" type="password" id="cfpassword" ></input>
        </form>
-       <button className="bg-[#D8B4F8] mt-10 ml-20 w-32 h-12 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">CONTINUE</button>
+       <button type="submit" className="bg-[#D8B4F8] mt-10 ml-20 w-32 h-12 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">CONTINUE</button>
        </div>
        </div>
        </div>
