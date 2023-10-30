@@ -14,17 +14,17 @@ export default function Navbar  (){
           <div className="inline-flex mt-3">
             <Link href={"/private"}>
                 <div>
-                    <Image src={logo2} alt="logo2" width={70} className="ml-5"/>
+                    <Image src={logo2} alt="logo2" width={50} className="ml-5"/>
                 </div>
             </Link>
             <Link href={"/workspace"}>
                 <div>
-                    <Image src={noti} alt="noti" width={30} className="mt-5 ml-40"/>
+                    <Image src={noti} alt="noti" width={20} className=" mt-3 ml-40"/>
                 </div>
             </Link>
             <Link href={"/account"} className="">     
                 <div>
-                    <Image src={user} alt="user" width={70} className=" ml-5 mr-5"/>
+                    <Image src={user} alt="user" width={50} className=" ml-5 mr-5"/>
                 </div>
             </Link>
             </div>
