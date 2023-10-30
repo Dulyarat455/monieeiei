@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Home from '../../public/images/navbar_homeicon.png'
 import Workspace from '../../public/images/navbar_workspace.png'
-import Setting from '../../public/images/settings.png'
+import Setting from '../../public/images/settingsnormal.png'
 import Link from 'next/link';
 import Image from "next/image";
 
