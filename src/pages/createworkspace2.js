@@ -8,7 +8,7 @@ export default function createworkspace2(){
 
     return(
         
-        <div className={`min-h-screen bg-[#f9f9ff] ${inter.className}`}>
+        <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
         <div class=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
