@@ -23,7 +23,7 @@ export default function Workspace_dailyexpense(){
                 {/* Use component  */}
                 <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">ADD A TRANSACTION</button>
             </div>
-            <Navbarbottom/> {/* Change to toggle */}
+            <Navbarbottom/>
         </div>
     )
 }
