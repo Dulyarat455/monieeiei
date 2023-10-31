@@ -20,9 +20,9 @@ export default function Workspace() {
                     <div className="flex flex-col items-center justify-center">
                     <Image src={alertcircle} alt="alertcircle" className="w-[154px] h-[154px] relative"/>
                     <label className="text-[#D9D9D9] text-xs font-normal font-rubik">Do not have the workspace for you</label>
-                    <a href="/createworkspace">
+                    <Link href="/createworkspace">
                     <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
-                    </a>
+                    </Link>
                     </div>
                 </div>
             <Navbarbottom/> {/* Change to toggle */}
