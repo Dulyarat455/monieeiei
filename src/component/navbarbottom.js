@@ -44,15 +44,14 @@ export default function Navbarbottom(){
       };
     
       const iconStyles = {
-        width: '28px',
-        height: '28px',
+        width: '30px',
+        height: '30px',
         flexShrink: 0,
         display: 'flex',
         margin: '0 10px',
-      };
-
-      const svgActiveColor = "#9747FF";
-      const svgDefaultColor = "black";      
+        alignItems: 'center',
+        justifyContent: 'center',
+      };    
     
     return(
         <nav style={navbarStyles_bottom} className="inline-felx">
