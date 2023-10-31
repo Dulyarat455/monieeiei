@@ -84,7 +84,7 @@ export default function Changepassword(){
         <div className="  mt-1 font-medium font-rubik text-3xl">My Password</div>
         
         <div className=" mt-10">
-            <div className="flex justify-center items-center ">
+            <div className="flex justify-center items-center ml-5">
                     {message && <p className={`${messagestatus ? "text-green-400": "text-red-500"} w-full text-left text-sm`}>{message}</p>}
             </div>
             <form>
