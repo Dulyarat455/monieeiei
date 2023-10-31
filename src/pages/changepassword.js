@@ -5,7 +5,7 @@ import logo from  '../../public/images/logo2.png'
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
-export default function changepassword(){
+export default function Changepassword(){
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
     const [token, setToken] = useState('');
