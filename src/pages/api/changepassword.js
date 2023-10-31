@@ -22,7 +22,7 @@ export default  async  function changePassword (req,res)  {
 
     const {
       user_password,
-      
+      user_current_password,
       } = req.body;
 
       
@@ -37,10 +37,13 @@ export default  async  function changePassword (req,res)  {
                 const person  = client.db('monieeiei').collection('User');
             
                 const checkAccount  = await person.findOne({ user_id :  user_id},{})
-                // console.log(checkAccount['user_email'])
+                // console.log(checkAccount['user_password'])
 
                 if(!checkAccount){
                     return ( res.status(400).json({message: 'Not found account', success: false}))
+                }
+                if(!(checkAccount['user_password'] === sha256(user_current_password + user_id).toString())){
+                  return ( res.status(400).json({message: 'Your current password invalid', success: false}))
                 }
 
                 const hashedPassword = sha256(user_password + user_id).toString();
