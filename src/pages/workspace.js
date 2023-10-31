@@ -4,6 +4,7 @@ import { Rubik } from 'next/font/google'
 import alertcircle from '../../public/images/alertcircle.png'
 import Image from "next/image";
 import Navbarbottom from '../../src/component/navbarbottom';
+import Link from 'next/link';
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 export default function Workspace() {
