@@ -101,7 +101,7 @@ return(
          onChange={(e)=>{setConfirmPassword(e.target.value)}}
           />
        </form>
-       <button className="bg-[#D8B4F8] mt-10 ml-20 w-32 h-12 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">CONTINUE</button>
+       <button className="bg-[#D8B4F8] mt-10 ml-20 w-32 h-12 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" type="button" onClick={()=>{movePage()}} >CONTINUE</button>
        </div>
        </div>
        </div>

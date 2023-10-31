@@ -5,8 +5,6 @@ import noti from '../../public/images/noti.svg'
 import user from '../../public/images/user.png'
 import logo2 from '../../public/images/logo2.png'
 
-
-
 export default function Navbar  (){
 
     return(
@@ -14,10 +12,10 @@ export default function Navbar  (){
           <div className="inline-flex mt-3">
             <Link href={"/private"}>
                 <div>
-                    <Image src={logo2} alt="logo2" width={50} className="ml-5"/>
+                    <Image src={logo2} alt="logo2" width={50} className="ml-4"/>
                 </div>
             </Link>
-            <Link href={"/workspace"}>
+            <Link href={"/notification"}>
                 <div>
                     <Image src={noti} alt="noti" width={20} className=" mt-3 ml-40"/>
                 </div>
