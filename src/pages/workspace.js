@@ -7,44 +7,37 @@ import Workspacename from "../../src/component/workspacename";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 export default function Workspace() {
-    const [workspaceData, setWorkspaceData] = useState([]);
-    
-    {/*useEffect(() => {
-        // Fetch user's workspace data from the database and replace it with actual data
-        async function fetchWorkspaceData() {
-            try {
-                const response = await fetch('API_URL');
-                if (response.ok) {
-                    const data = await response.json();
-                    setWorkspaceData(data);
-                } else {
-                    console.error('Failed to fetch workspace data');
-                }
-            } catch (error) {
-                console.error('Error while fetching workspace data', error);
-            }
-        }
+    const [workspaceOwners, setWorkspaceOwners] = useState([]); // Store user_id and workspace_id data
+    const [user_id, setUser_id] = useState(""); // replace with actual user ID
 
-        fetchWorkspaceData();
-    }, []);*/}
+    useEffect(() => {
+        // Fetch user's workspace owners list from the database or API
+        // Replace 'API_URL' with the actual endpoint for fetching workspace owners data
+        fetch("mongodb+srv://Monie:1234@cluster0.jl8dvxy.mongodb.net/?retryWrites=true&w=majority")
+            .then((response) => response.json())
+            .then((data) => {
+                setWorkspaceOwners(data);
+            })
+            .catch((error) => {
+                console.error("Error while fetching workspace owners data", error);
+            });
+    }, []);
     
     return(
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
             <div className="flex flex-col items-center justify-center h-full ">
             <Navbar/> 
             </div>
-                <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
-                <div className="ml-10 font-normal text-sm font-rubik text-[#A7A7A7] items-center justify-center">Manage your workspace finances with friends</div>
-                <div className="ml-10 font-normal font-xxs font-rubik text-[#A7A7A7] items-center justify-center">and family</div>
+                <div style={{fontSize: '32px', color: '#1E1E1E'}} className="text-[#1E1E1E] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
+                <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
+                <div className="ml-10 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
                 <div className="flex flex-col items-center justify-center h-full pt-8">
-                    <Workspacename />
-                    {/* Map workspace's name */}
-                    {workspaceData.length > 0 ? (
-                        workspaceData.map((workspaceName, index) => (
-                            <Workspacename key={index} name={workspaceName} />
-                    ))
+                    {/*<Workspacename />*/}
+                    {/* Check data, if have show component */}
+                    {workspaceOwners.some((owner) => owner.user_id === user_id) ? (
+                        <Workspacename user_id={user_id} />
                     ) : (
-                    <div className="flex flex-col items-center justify-center mt-4">
+                    <div className="flex flex-col items-center justify-center mt-6">
                     <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none" viewBox="0 0 24 24" 
