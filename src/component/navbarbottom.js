@@ -26,7 +26,7 @@ export default function Navbarbottom(){
             setActiveItemPrivate('black')
             setActiveItemWorkspace('black')
         }
-    }, []);
+    }, [currentPath]);
 
       const navbarStyles_bottom = {
         position: 'absolute',
