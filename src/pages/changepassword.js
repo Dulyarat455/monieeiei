@@ -54,7 +54,7 @@ export default function Changepassword(){
                     setMessage(data.message);
                     setMessagestatus(true);
                     setTimeout(() => {
-                        router.push("/changepassword");
+                        router.push("/account");
                     }, 1000);
                     } else {
                       console.log(data)

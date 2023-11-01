@@ -18,7 +18,7 @@ export default  async  function getProfile (req,res)  {
     const decoded =   jwt.decode(token)
     const { user_id } = decoded || {};
 
-      
+    
      if (req.method !== 'GET') {
             return res.status(405).json({ message: 'Method not allowed', success: false });
           }

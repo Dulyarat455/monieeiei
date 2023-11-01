@@ -13,14 +13,14 @@ export default function Workspace() {
     useEffect(() => {
         // Fetch user's workspace owners list from the database or API
         // Replace 'API_URL' with the actual endpoint for fetching workspace owners data
-        fetch("mongodb+srv://Monie:1234@cluster0.jl8dvxy.mongodb.net/?retryWrites=true&w=majority")
-            .then((response) => response.json())
-            .then((data) => {
-                setWorkspaceOwners(data);
-            })
-            .catch((error) => {
-                console.error("Error while fetching workspace owners data", error);
-            });
+        // fetch("mongodb+srv://Monie:1234@cluster0.jl8dvxy.mongodb.net/?retryWrites=true&w=majority")
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         setWorkspaceOwners(data);
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error while fetching workspace owners data", error);
+        //     });
     }, []);
     
     return(
