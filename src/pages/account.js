@@ -17,7 +17,7 @@ export default function account(){
                 <div className="w-28 h-28 rounded-full bg-[#D8B4F8] flex items-center justify-center">
                 <Image alt="Profile" src={Avatar} className="w-24 h-24 rounded-full]"/>
                 </div>
-                <label for="user_username" className="text-[#757575] font-normal flex">@ppppppp</label>
+                <label htmlFor="user_username" className="text-[#757575] font-normal flex">@ppppppp</label>
 
                 <div className="item-center justify-centerl mt-4">
                     <form>
