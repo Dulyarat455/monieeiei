@@ -29,7 +29,7 @@ export default function Workspacename({user_id, workspace_id})
 
     return(
         <div className="workspace-container mt-4">
-            <button style={{ width: '300px', height: '80px'}} className="workspace-name-button bg-[#FAE392] hover:bg-[#9B7B0C] rounded-md justify-center items-center gap-2.5 inline-flex">
+            <button style={{ width: '300px', height: '80px'}} className="workspace-name-button bg-[#FAE392] hover:bg-[#9B7B0C] rounded-xl justify-center items-center gap-2.5 inline-flex">
                 <div style={{fontSize: 26, color: '#9B7B0C'}} className={`text-lg font-normal font-rubik justify-center items-center ${inter.className}`}>
                     {workspaceName ? workspaceName : "Workspace’s Name"}
                 </div>
