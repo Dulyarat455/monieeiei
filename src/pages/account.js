@@ -8,7 +8,7 @@ import Link from 'next/link';
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 // Modified by Uracha 28-10-2003 
 
-export default function account(){
+export default function Account(){
 
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
