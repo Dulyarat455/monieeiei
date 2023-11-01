@@ -5,14 +5,16 @@ import noti from '../../public/images/noti.svg'
 import user from '../../public/images/user.png'
 import logo2 from '../../public/images/logo2.png'
 
+
+
 export default function Navbar  (){
 
     return(
         <nav>
-          <div className="inline-flex mt-3">
+          <div className="inline-flex mt-4">
             <Link href={"/private"}>
                 <div>
-                    <Image src={logo2} alt="logo2" width={50} className="ml-4"/>
+                    <Image src={logo2} alt="logo2" width={50} />
                 </div>
             </Link>
             <Link href={"/notification"}>
