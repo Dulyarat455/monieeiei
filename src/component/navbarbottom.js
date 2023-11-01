@@ -33,7 +33,7 @@ export default function Navbarbottom(){
         justifyContent: 'space-between',
         alignItems: 'center',
         color: 'rgba(216, 180, 248, 0.25)' ,
-        padding: '0 80px'
+        padding: '0 80px',
       };
     
       const iconStyles = {
@@ -51,7 +51,7 @@ export default function Navbarbottom(){
             <Link href={"/workspace"}>
                 <div
                 style={iconStyles}
-                onClick={() => setActiveItemWorkspace("workspace")}
+                //onClick={() => setActiveItemWorkspace("workspace")}
                 data-item="workspace"
                 title="workspace">
                 <svg 
@@ -72,7 +72,7 @@ export default function Navbarbottom(){
             <Link href={"/account"}>
                 <div 
                 style={iconStyles}
-                onClick={() => setActiveItemAccount("account")}
+                //onClick={() => setActiveItemAccount("account")}
                 data-item="account"
                 title="account">
                 <svg 

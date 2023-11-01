@@ -31,14 +31,8 @@ export default function Workspace() {
                 <div style={{fontSize: '32px', color: '#1E1E1E'}} className="text-[#1E1E1E] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
                 <div className="ml-10 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
-                <div className="flex flex-col items-center justify-center h-full pt-6">
-                    {/*<Workspacename />
-                    <Workspacename />
-                    <Workspacename />
-                    <Workspacename />
-                    <Workspacename />
-                    <Workspacename />
-                    <Workspacename />
+                <div className="flex flex-col items-center justify-center h-full pt-4">
+                    
                     {/* Check data, if have show component */}
                     {workspaceOwners.some((owner) => owner.user_id === user_id) ? (
                         <Workspacename user_id={user_id} />
@@ -60,11 +54,13 @@ export default function Workspace() {
                     )}
                     <div className="flex flex-col justify-center items-center h-full">
                         <Link href="/createworkspace">
-                            <button type="button" className="bg-[#D8B4F8] mt-6 w-40 h-12 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
+                            <button type="button" className="bg-[#D8B4F8] mt-6 w-40 h-12 border-bottom-4 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
                         </Link>
                     </div>
                 </div>
-                <Navbarbottom/>
+                <div className="mt-12"> 
+                    <Navbarbottom/>
+                    </div>
         </div>
     )
 }
