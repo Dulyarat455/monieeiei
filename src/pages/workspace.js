@@ -31,8 +31,14 @@ export default function Workspace() {
                 <div style={{fontSize: '32px', color: '#1E1E1E'}} className="text-[#1E1E1E] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
                 <div className="ml-10 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
-                <div className="flex flex-col items-center justify-center h-full pt-8">
-                    {/*<Workspacename />*/}
+                <div className="flex flex-col items-center justify-center h-full pt-6">
+                    {/*<Workspacename />
+                    <Workspacename />
+                    <Workspacename />
+                    <Workspacename />
+                    <Workspacename />
+                    <Workspacename />
+                    <Workspacename />
                     {/* Check data, if have show component */}
                     {workspaceOwners.some((owner) => owner.user_id === user_id) ? (
                         <Workspacename user_id={user_id} />
@@ -41,7 +47,7 @@ export default function Workspace() {
                     <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none" viewBox="0 0 24 24" 
-                    stroke-width="1.5" 
+                    strokeWidth="1.5" 
                     stroke="#D9D9D9" 
                     class="w-28 h-28 mt-12">
                     <path 
@@ -50,13 +56,15 @@ export default function Workspace() {
                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                     </svg>
                     <label className="text-[#D9D9D9] text-xs font-normal font-rubik">Do not have the workspace for you</label>
-                    <Link href="/createworkspace">
-                    <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
-                    </Link>
                     </div>
                     )}
+                    <div className="flex flex-col justify-center items-center h-full">
+                        <Link href="/createworkspace">
+                            <button type="button" className="bg-[#D8B4F8] mt-6 w-40 h-12 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
+                        </Link>
+                    </div>
                 </div>
-            <Navbarbottom/>
+                <Navbarbottom/>
         </div>
     )
 }

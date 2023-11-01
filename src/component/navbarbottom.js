@@ -65,7 +65,7 @@ export default function Navbarbottom(){
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 26 26" 
-                stroke-width="1.5" 
+                strokeWidth="1.5" 
                 stroke={activeItemAccount}
                 class="w-8 h-8">
                     <path 
@@ -86,7 +86,7 @@ export default function Navbarbottom(){
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 26 26" 
-                stroke-width="1.5" 
+                strokeWidth="1.5" 
                 stroke={activeItemWorkspace}
                 class="w-8 h-8">
                     <path 
@@ -107,7 +107,7 @@ export default function Navbarbottom(){
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 26 26" 
-                stroke-width="1.5" 
+                strokeWidth="1.5" 
                 stroke={activeItemSetting}
                 class="w-8 h-8">
                     <path 

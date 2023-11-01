@@ -8,7 +8,7 @@ export default function Workspacename({user_id, workspace_id})
     const [workspaceName, setWorkspaceName] = useState(""); // Store the workspace name
     const router = useRouter();
 
-    useEffect(() => {
+    {/*useEffect(() => {
         // Fetch workspace name based on user_id and workspace_id
         async function fetchWorkspaceName() {
             try {
@@ -25,11 +25,11 @@ export default function Workspacename({user_id, workspace_id})
         }
 
         fetchWorkspaceName();
-    }, [user_id, workspace_id]);
+    }, [user_id, workspace_id]);*/}
 
     return(
-        <div className="workspace-container">
-            <button style={{ width: '300px', height: '80px'}} className="workspace-name-button px-10 py-2 bg-[#FAE392] hover:bg-[#9B7B0C] rounded-md justify-center items-center gap-2.5 inline-flex">
+        <div className="workspace-container mt-4">
+            <button style={{ width: '300px', height: '80px'}} className="workspace-name-button bg-[#FAE392] hover:bg-[#9B7B0C] rounded-md justify-center items-center gap-2.5 inline-flex">
                 <div style={{fontSize: 26, color: '#9B7B0C'}} className={`text-lg font-normal font-rubik justify-center items-center ${inter.className}`}>
                     {workspaceName ? workspaceName : "Workspace’s Name"}
                 </div>
