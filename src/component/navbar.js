@@ -20,7 +20,7 @@ export default function Navbar  (){
                     <Image src={noti} alt="noti" width={20} className=" mt-3 ml-40"/>
                 </div>
             </Link>
-            <Link href={"/account"} className="">     
+            <Link href={"/setting"} className="">     
                 <div>
                     <Image src={user} alt="user" width={50} className=" ml-5 mr-5"/>
                 </div>
