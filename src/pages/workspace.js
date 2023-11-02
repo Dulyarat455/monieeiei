@@ -76,10 +76,10 @@ export default function Workspace() {
 
                  {(info.length > 1) ? 
 
-                    info.map(workspace => (
+                    info.map((workspace,index) => (
 
                             // console.log("workspace = ",workspace.workspace_name)
-                           (<Workspacename workspace_name={workspace.workspace_name} workspace_id={workspace.workspace_id}/>)
+                           (<Workspacename key={index}  workspace_name={workspace.workspace_name} workspace_id={workspace.workspace_id}/>)
                     )) :
 
 
