@@ -85,7 +85,7 @@ export default function Workspace() {
 
                   
                   
-                    <div className="flex flex-col items-center justify-center mt-6">
+                    <div className="flex flex-col items-center justify-center mt-6 h-full">
                     <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none" viewBox="0 0 24 24" 
@@ -107,7 +107,7 @@ export default function Workspace() {
 
                     <div className="flex flex-col justify-center items-center h-full">
                         <Link href="/createworkspace">
-                            <button type="button" className="bg-[#D8B4F8] mt-6 w-40 h-12 border-bottom-4 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
+                            <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white text-xs font-rubik hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
                         </Link>
                     </div>
                 </div>
