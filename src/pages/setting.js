@@ -10,6 +10,8 @@ const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function Setting() {
     
     const [Key, setKey] = useState(false);
+    const user_email = "UrachaRittikulsttichai@gmail.com";
+    const Owner = "(You)";
     return (
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
             <div className="flex flex-col items-center justify-center h-full md:mx-auto"> 
@@ -21,7 +23,7 @@ export default function Setting() {
                 <div className="pt-8 justify-center items-center">
                 <div style={{fontSize: '20px'}} className="font-rubik font-medium text-black text-xl ml-10">Members</div>
                     <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
-                        <div style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base flex flex-col ">Uracharittikulsittichai@gmail.comYou</div>
+                        <div style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base flex flex-col ">{user_email}{Owner}</div>
                     </div>
                     <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
                         <label style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base">User@gmail.com</label>
