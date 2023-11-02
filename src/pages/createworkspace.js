@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
-import Navbar from '../component/navbar';
+import Navbar from '../components/navbar';
 import Icon from  '../../public/images/Icon.svg'
 import Link from 'next/link';
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })

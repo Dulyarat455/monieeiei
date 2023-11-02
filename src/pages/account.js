@@ -2,8 +2,8 @@ import React,{useState,useEffect} from "react";
 import Avatar from  '../../public/images/userprofile.png'
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
-import Navbar from '../component/navbar';
-import Navbarbottom from '../../src/component/navbarbottom';
+import Navbar from '../components/navbar';
+import Navbarbottom from '../components/navbarbottom';
 import Link from 'next/link';
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 // Modified by Uracha 28-10-2003 

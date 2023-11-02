@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from "react";
-import Navbar from "../component/navbar";
+import Navbar from "../components/navbar";
 import { Rubik } from 'next/font/google'
-import Navbarbottom from '../../src/component/navbarbottom';
+import Navbarbottom from '../components/navbarbottom';
 import Link from 'next/link';
-import Workspacename from "../../src/component/workspacename";
+import Workspacename from "../components/workspacename";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 export default function Workspace() {
