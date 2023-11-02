@@ -43,12 +43,12 @@ export default function Account(){
 
                     console.log(data.success)
                     console.log(data.getAccount['user_email'])
-                    setInfo({ ...info, ["user_email"]: data.getAccount['user_email'],
+                    setInfo(info => ({ ...info, ["user_email"]: data.getAccount['user_email'],
                     ["user_phonenumber"]: data.getAccount['user_phonenumber'], 
                     ["user_firstname"]: data.getAccount['user_firstname'],
                     ["user_lastname"]: data.getAccount['user_lastname'],
                     ["user_DOB"]: data.getAccount['user_DOB']
-                 });
+                 }));
 
                 // setMessage(data.message);
                 // setMessagestatus(true);
