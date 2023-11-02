@@ -19,7 +19,7 @@ const Deletemodal = ({isVisible, onClose}) => {
     //}
     // test workspace's name
     // need to create a function to retrieve the workspace name and workspace_id values.
-    const workspaceName = 'My japan trip?';
+    const workspaceName = '"My japan trip"?';
 
     return(
         // backdrop
