@@ -24,19 +24,19 @@ const Deletemodal = ({isVisible, onClose}) => {
         <div className="ml-10 mt-16 fixed inset-0 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             <div style={{width: '290px', height: '200px'}} className="bg-[#FAE392] rounded-[36px] border border-[#9B7B0C] flex flex-col justify-center items-center">
                 <div style={{color: '#9B7B0C', fontSize: 17}} className="w-[333px] text-center text-xl font-medium font-['Rubik'] justify-center items-center">Are you sure to delete</div>
-                <div style={{color: '#9B7B0C', fontSize: 17}} className="text-center text-xl font-medium font-['Rubik'] justify-center items-center">&ldquo;{workspaceName}&rdquo;?</div>
+                <div style={{color: '#9B7B0C', fontSize: 17}} className="text-center text-xl font-medium font-['Rubik'] justify-center items-center">workspace name</div>
                 <div className="justify-center items-center gap-6 inline-flex">    
                     <button
                     style={{height: '49px',width: '120px'}} 
                     //onClick={onDelete}
                     className="p-2 mt-6 bg-[#D8B4F8] hover:bg-[#CA8DFF] text-sm font-medium font-rubik text-white rounded-lg justify-center items-center flex">
-                        I'm sure
+                        Im sure
                     </button>
                     <button 
                     style={{height: '49px',width: '120px'}} 
                     onClick={() => onClose()}
                     className=" p-2 mt-6 bg-[#D8B4F8] hover:bg-[#CA8DFF] text-sm font-medium font-rubik text-white rounded-lg justify-center items-center flex">
-                        No, I am not
+                        No I am not
                     </button>
                 </div>
             </div>
