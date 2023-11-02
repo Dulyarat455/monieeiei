@@ -9,19 +9,59 @@ const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function Workspace() {
     const [workspaceOwners, setWorkspaceOwners] = useState([]); // Store user_id and workspace_id data
     const [user_id, setUser_id] = useState(""); // replace with actual user ID
+    const [token, setToken] = useState('');
+    const [info, setInfo] = useState([{
+        workspace_name: "",
+        workspace_id: ""
+    }]);
+
 
     useEffect(() => {
-        // Fetch user's workspace owners list from the database or API
-        // Replace 'API_URL' with the actual endpoint for fetching workspace owners data
-        // fetch("mongodb+srv://Monie:1234@cluster0.jl8dvxy.mongodb.net/?retryWrites=true&w=majority")
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         setWorkspaceOwners(data);
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error while fetching workspace owners data", error);
-        //     });
+      
+        const token = localStorage.getItem("token");
+        setToken(token);
+
+        const res = fetch("/api/workspace/getnameworkspace", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+           
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+
+                    console.log(data)
+                    // console.log(data.getAccount['user_email'])
+                    const workspaceData = data.allWorkSpace;
+                    const workspaceInfo = workspaceData.map(workspace => ({
+                        workspace_name: workspace.name.workspace_name,
+                        workspace_id: workspace.workspace_id
+                      }));
+                    setInfo(workspaceInfo);
+               
+
+                // setMessage(data.message);
+                // setMessagestatus(true);
+                // setTimeout(() => {
+                //     router.push("/changepassword");
+                // }, 1000);
+
+                } else {
+                  console.log(data)
+                  setMessage(data.message)
+                  setMessagestatus(false)
+                }
+            }
+            );
+
+
     }, []);
+
+
+    console.log("info = ",info)
     
     return(
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
@@ -32,11 +72,19 @@ export default function Workspace() {
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
                 <div className="ml-10 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
                 <div className="flex flex-col items-center justify-center h-full pt-4">
-                    
-                    {/* Check data, if have show component */}
-                    {workspaceOwners.some((owner) => owner.user_id === user_id) ? (
-                        <Workspacename user_id={user_id} />
-                    ) : (
+
+
+                 {(info.length > 1) ? 
+
+                    info.map(workspace => (
+
+                            // console.log("workspace = ",workspace.workspace_name)
+                           (<Workspacename workspace_name={workspace.workspace_name} workspace_id={workspace.workspace_id}/>)
+                    )) :
+
+
+                  
+                  
                     <div className="flex flex-col items-center justify-center mt-6">
                     <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -51,7 +99,12 @@ export default function Workspace() {
                     </svg>
                     <label className="text-[#D9D9D9] text-xs font-normal font-rubik">Do not have the workspace for you</label>
                     </div>
-                    )}
+                    
+
+
+
+                }
+
                     <div className="flex flex-col justify-center items-center h-full">
                         <Link href="/createworkspace">
                             <button type="button" className="bg-[#D8B4F8] mt-6 w-40 h-12 border-bottom-4 rounded-xl text-white text-xs font-rubik text-sm hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
