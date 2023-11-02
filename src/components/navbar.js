@@ -14,7 +14,7 @@ export default function Navbar  (){
           <div className="inline-flex mt-4">
             <Link href={"/private"}>
                 <div>
-                    <Image src={logo2} alt="logo2" width={50} />
+                    <Image src={logo2} alt="logo2" width={50} className="ml-4"/>
                 </div>
             </Link>
             <Link href={"/notification"}>
