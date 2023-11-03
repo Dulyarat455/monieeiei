@@ -35,33 +35,7 @@ export default  async  function getnameworkspace (req,res)  {
 
                 
                 // const ans  = await workspaceOwners.find({user_id: user_id},{}).toArray()
-                // const allWorkSpace = await workspaceOwners.aggregate( [
-                //     {
-                //         $match: {
-                //             'user_id': user_id
-                //            }
-                //     },
-                //     {
-                //       $lookup:
-                //         {
-                //           from: "Workspace",
-                //           localField: "workspace_id",
-                //           foreignField: "workspace_id",
-                //           as: "name"
-                //         }
-                //    }
-                //  ] ).toArray();
-                // // // console.log(checkAccount['user_password'])
-
-                // for (let i=0 ; i< allWorkSpace.length; i++){
-                //     // getbook[i].room = getbook[i].room[0]
-                //     // getbook[i].roomtype = getbook[i].roomtype[0]
-                //     allWorkSpace[i].name = allWorkSpace[i].name[0]
-                //     allWorkSpace[i]['owner_status'] = 1
-
-                // }
-
-
+             
 
                 const allWorkSpace = await workspaceMembers.aggregate( [
                   {
@@ -98,8 +72,6 @@ export default  async  function getnameworkspace (req,res)  {
               }
 
               
-                
-
                 
                 if(allWorkSpace){
                   return( res.status(200).json({ message: 'Get name workspace success',allWorkSpace, success: true}))
