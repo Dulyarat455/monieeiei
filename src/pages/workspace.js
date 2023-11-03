@@ -12,7 +12,8 @@ export default function Workspace() {
     const [token, setToken] = useState('');
     const [info, setInfo] = useState([{
         workspace_name: "",
-        workspace_id: ""
+        workspace_id: "",
+        owner_status: 0
     }]);
 
 
@@ -38,7 +39,8 @@ export default function Workspace() {
                     const workspaceData = data.allWorkSpace;
                     const workspaceInfo = workspaceData.map(workspace => ({
                         workspace_name: workspace.name.workspace_name,
-                        workspace_id: workspace.workspace_id
+                        workspace_id: workspace.workspace_id,
+                        owner_status: workspace.owner_status
                       }));
                     setInfo(workspaceInfo);
                
@@ -79,7 +81,7 @@ export default function Workspace() {
                     info.map((workspace,index) => (
 
                             // console.log("workspace = ",workspace.workspace_name)
-                           (<Workspacename key={index}  workspace_name={workspace.workspace_name} workspace_id={workspace.workspace_id}/>)
+                           (<Workspacename key={index}  workspace_name={workspace.workspace_name} workspace_id={workspace.workspace_id} owner_status={workspace.owner_status}/>)
                     )) :
 
 

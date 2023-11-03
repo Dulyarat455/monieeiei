@@ -31,33 +31,73 @@ export default  async  function getnameworkspace (req,res)  {
                 await client.connect();
                 const workspace  = client.db('monieeiei').collection('Workspace');
                 const workspaceOwners = client.db('monieeiei').collection('Workspace owner list');
+                const workspaceMembers = client.db('monieeiei').collection('Workspace member list');
 
                 
                 // const ans  = await workspaceOwners.find({user_id: user_id},{}).toArray()
-                const allWorkSpace = await workspaceOwners.aggregate( [
-                    {
-                        $match: {
-                            'user_id': user_id
-                           }
-                    },
-                    {
-                      $lookup:
-                        {
-                          from: "Workspace",
-                          localField: "workspace_id",
-                          foreignField: "workspace_id",
-                          as: "name"
-                        }
-                   }
-                 ] ).toArray();
-                // // console.log(checkAccount['user_password'])
+                // const allWorkSpace = await workspaceOwners.aggregate( [
+                //     {
+                //         $match: {
+                //             'user_id': user_id
+                //            }
+                //     },
+                //     {
+                //       $lookup:
+                //         {
+                //           from: "Workspace",
+                //           localField: "workspace_id",
+                //           foreignField: "workspace_id",
+                //           as: "name"
+                //         }
+                //    }
+                //  ] ).toArray();
+                // // // console.log(checkAccount['user_password'])
 
-                for (let i=0 ; i< allWorkSpace.length; i++){
-                    // getbook[i].room = getbook[i].room[0]
-                    // getbook[i].roomtype = getbook[i].roomtype[0]
-                    allWorkSpace[i].name = allWorkSpace[i].name[0]
+                // for (let i=0 ; i< allWorkSpace.length; i++){
+                //     // getbook[i].room = getbook[i].room[0]
+                //     // getbook[i].roomtype = getbook[i].roomtype[0]
+                //     allWorkSpace[i].name = allWorkSpace[i].name[0]
+                //     allWorkSpace[i]['owner_status'] = 1
 
-                }
+                // }
+
+
+
+                const allWorkSpace = await workspaceMembers.aggregate( [
+                  {
+                      $match: {
+                          'user_id': user_id
+                         }
+                  },
+                  {
+                    $lookup:
+                      {
+                        from: "Workspace",
+                        localField: "workspace_id",
+                        foreignField: "workspace_id",
+                        as: "name"
+                      }
+                 }
+               ] ).toArray();
+              // // console.log(checkAccount['user_password'])
+
+              for (let i=0 ; i< allWorkSpace.length; i++){
+                  // getbook[i].room = getbook[i].room[0]
+                  // getbook[i].roomtype = getbook[i].roomtype[0]
+                  const check = await workspaceOwners.findOne({user_id: user_id, workspace_id:allWorkSpace[i].workspace_id },{})
+
+                  if(check){
+                    allWorkSpace[i]['owner_status'] = 1
+                  }
+                  else{
+                    allWorkSpace[i]['owner_status'] = 0
+                  }
+                  allWorkSpace[i].name = allWorkSpace[i].name[0]
+                  
+
+              }
+
+              
                 
 
                 

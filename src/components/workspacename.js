@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Rubik } from 'next/font/google'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
-export default function Workspacename({workspace_name, workspace_id})
+export default function Workspacename({workspace_name, workspace_id , owner_status})
 {
     const [workspaceName, setWorkspaceName] = useState(""); // Store the workspace name
     const router = useRouter();
@@ -17,6 +17,11 @@ export default function Workspacename({workspace_name, workspace_id})
                     {workspace_name ? workspace_name : "Workspace’s Name"}
                 </div>
             </button>
+            {owner_status === 1 &&
+            (<span className="absolute top-30 right-10 text-md md:text-lg text-yellow-500" >
+                  ★
+                </span>)
+            }
         </div>
     )
 }
