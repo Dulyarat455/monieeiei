@@ -14,7 +14,7 @@ export default function dailyexpense(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div class=" w-[25rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div class="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 text-[32px] font-[500] ml-20">Daily Expense</div>
             <Link href="https://www.youtube.com/watch?v=nlPYear59oQ">
@@ -96,8 +96,8 @@ export default function dailyexpense(){
         <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">ATTACH A PHOTO</label><br></br>
         <div className="inline-flex">
         <div className="rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] w-[16rem]  ml-14 h-10"></div>
-        <label htmlFor="picture" className="z-1"><Image alt="upload" src={upload} className="mt-3 ml-2 mr-24"></Image></label><br></br></div>
-        <input className="mb-5 text-[#9B7C0D] text-[12px] font-[400] invisible hidden " 
+        <label htmlFor="picture" className=""><Image alt="upload" src={upload} className="mt-3 ml-2 "></Image></label><br></br></div>
+        <input className="mb-5 text-[#9B7C0D] text-[12px] font-[400] invisible hidden" 
         type="file"      
         id="picture"
         name="picture"
@@ -108,7 +108,7 @@ export default function dailyexpense(){
         <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">SET A DATE MANUALLY</label><br></br>
         <div className="inline-flex">
         <div className="rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] w-[16rem]  ml-14 h-10"></div>
-        <label htmlFor="dob" className="z-1"><Image alt="date" src={date} className="mt-3 ml-2 mr-24"></Image></label><br></br></div>
+        <label htmlFor="dob" className=""><Image alt="date" src={date} className="mt-3 ml-2 "></Image></label><br></br></div>
         <input className="mb-5 text-[#9B7C0D] text-[12px] font-[400] invisible hidden " 
         type="date"      
         id="dob"

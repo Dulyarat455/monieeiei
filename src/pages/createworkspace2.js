@@ -11,7 +11,7 @@ export default function createworkspace2(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div class=" w-[25rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div class=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-5xl">Create a</div>
             <a href="https://www.youtube.com/watch?v=nlPYear59oQ">
