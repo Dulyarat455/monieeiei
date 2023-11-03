@@ -18,8 +18,8 @@ export default function Workspacename({workspace_name, workspace_id , owner_stat
                 </div>
             </button>
             {owner_status === 1 &&
-            (<span className="absolute top-30 right-10 text-md md:text-lg text-yellow-500" >
-                  ★
+            (<span className="w-10 h-[22px] absolute mt-2 top-30 right-12 text-xs text-[#219226] font-normal font-rubik px-2 py-1 bg-[#C5FFC7] bg-opacity-75 rounded justify-center items-center" >
+                  own
                 </span>)
             }
         </div>
