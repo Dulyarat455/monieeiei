@@ -65,9 +65,9 @@ export default function Createworkspace2(){
                   console.log(data)
               setMessage(data.message);
               setMessagestatus(true);
-              // setTimeout(() => {
-              //     router.push("/account");
-              // }, 1000);
+              setTimeout(() => {
+                  router.push("/createworkspace");
+              }, 1000);
               } else {
                 console.log(data)
                 setMessage(data.message)
