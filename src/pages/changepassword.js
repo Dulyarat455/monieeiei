@@ -89,7 +89,7 @@ export default function Changepassword(){
             </div>
             <form>
                 <label htmlFor="currentpassword" className="ml-5 text-[#A7A7A7] text-xs">CURRENT PASSWORD*</label><br></br>
-                <input className="mb-5 ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Enter your current password" 
+                <input className="mb-5 ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Enter your current password" 
                 type="email" 
                 id="user_current_password" 
                 name="user_current_password"
@@ -97,7 +97,7 @@ export default function Changepassword(){
                 required
                 ></input>
                 <br></br> <label htmlFor="newpassword" className="ml-5 text-[#A7A7A7] text-xs">NEW PASSWORD*</label><br></br>
-                <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Enter your new password" 
+                <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Enter your new password" 
                 type="password" 
                 id="user_password" 
                 name="user_password"
@@ -106,7 +106,7 @@ export default function Changepassword(){
                 ></input>
                 <div className="ml-5 mt-1 text-[10px] mb-5 font-normal">Must be at least 8 characters</div>
                 <label htmlFor="cfpassword" className="ml-5 text-[#A7A7A7] text-xs">CONFIRM NEW PASSWORD*</label><br></br>
-                <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Re-enter your new password" 
+                <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" placeholder="Re-enter your new password" 
                 type="password" 
                 id="user_confirm_password" 
                 name="user_confirm_password"
