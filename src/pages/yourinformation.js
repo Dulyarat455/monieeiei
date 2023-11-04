@@ -110,7 +110,7 @@ export default function Yourinformation() {
                     <form>
                         <label htmlFor="username" className="ml-5 text-[#A7A7A7] text-xs">USERNAME</label><br></br>
                         <input className="mb-5 ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
-                         placeholder="Fill the text here" 
+                         placeholder="Create your username" 
                          type="text" 
                          id="user_username"
                          name="user_username" 
@@ -118,7 +118,7 @@ export default function Yourinformation() {
                          required/>
                         <br></br> <label htmlFor="fname" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR FIRST NAME?</label><br></br>
                         <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
-                        placeholder="Fill the text here" 
+                        placeholder="Ex. Johny" 
                         type="text" 
                         id="user_firstname" 
                         name="user_firstname" 
@@ -127,7 +127,7 @@ export default function Yourinformation() {
                         <div className="ml-5 mb-5 "></div>
                         <label htmlFor="lname" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR LAST NAME?</label><br></br>
                         <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
-                        placeholder="Fill the text here" 
+                        placeholder="Ex. Gates" 
                         type="text" 
                         id="user_lastname"
                         name="user_lastname" 
@@ -136,7 +136,7 @@ export default function Yourinformation() {
                         <div className="ml-5 mb-5 "></div>
                         <label htmlFor="born" className="ml-5 text-[#A7A7A7] text-xs">WHEN WERE YOU BORN?</label><br></br>
                         <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
-                        placeholder="Fill the text here" 
+                        placeholder="DD/MM/YYYY" 
                         type="date" 
                         id="user_DOB" 
                         name="user_DOB"
@@ -144,7 +144,7 @@ export default function Yourinformation() {
                         <div className="ml-5"></div>
                         <label htmlFor="phonenumber" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR PHONE NUMBER?</label><br></br>
                         <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
-                        placeholder="Fill the text here" 
+                        placeholder="Ex. 0812345678" 
                         type="tel" 
                         id="user_phonenumber" 
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"

@@ -107,14 +107,13 @@ export default function dailyexpense(){
        <div className="mt-2">
         <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">SET A DATE MANUALLY</label><br></br>
         <div className="inline-flex">
-        <div className="rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] w-[16rem]  ml-14 h-10"></div>
-        <label htmlFor="dob" className=""><Image alt="date" src={date} className="mt-3 ml-2 "></Image></label><br></br></div>
-        <input className="mb-5 text-[#9B7C0D] text-[12px] font-[400] invisible hidden " 
-        type="date"      
-        id="dob"
-        name="dob"
-        required
-         />
+        <input className="ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] text-[#9B7C0D] text-[12px] font-[400]  placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal placeholder:pl-48" 
+                        placeholder="DD/MM/YYYY" 
+                        type="date" 
+                        id="DOB" 
+                        name="DOB"
+                       />
+       <br></br></div>
        </div>
        <div className="mt-2">
       <label htmlFor="category" className=" ml-14 text-[#9B7C0D]  text-[12px] font-[400]">SEND A REQUEST MONEY TO</label><br></br>
