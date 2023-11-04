@@ -25,7 +25,8 @@ export default  async  function createworkspace (req,res)  {
         member_list,
         } = req.body;
   
-
+        // console.log("workspace_name = ",workspace_name)
+        // console.log("member_list = ",member_list)
       
      if (req.method !== 'POST') {
             return res.status(405).json({ message: 'Method not allowed', success: false });
