@@ -74,8 +74,17 @@ export default function Workspace_dailyexpense(){
             </nav>
             {/* Search and filter comopnent */}
             <Searchandfilter/>
-            <Transaction/>
-            <div className="flex flex-col items-center justify-center h-full mt-2">
+            <div className="mt-4">
+                <Transaction/>
+                
+            </div>
+            <div className="flex justify-center items-center gap-2 h-full">
+                <Link href="/dailyexpense">
+                    <button type="button" className="mt-10 inline-block shadow-lg px-5 py-3 focus:outline-none ring-4 ring-purple-300 ring-opacity-50 bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">Add a transaction</button>
+                </Link>
+                
+            </div>
+            {/*<div className="flex flex-col items-center justify-center h-full mt-2">
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none" viewBox="0 0 24 24" 
@@ -88,13 +97,18 @@ export default function Workspace_dailyexpense(){
                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                     </svg>
                     <label className="text-[#D9D9D9] text-xs font-normal font-rubik">Do not found the transactions</label>
-                {/* Use component  */}
-            </div>
-            <div className="flex justify-center items-center h-full">
+                    <div className="flex justify-center items-center h-full">
+                        <Link href="/dailyexpense">
+                            <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">Add a transaction</button>
+                        </Link>
+                    </div>
+                {/* Use component 
+            </div>*/}
+            {/*<div className="flex justify-center items-center h-full">
                 <Link href="/dailyexpense">
                     <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">Add a transaction</button>
                 </Link>
-            </div>
+            </div>*/}
             <Navbarbottom/>
         </div>
     )
