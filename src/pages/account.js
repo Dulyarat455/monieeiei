@@ -135,7 +135,7 @@ export default function Account(){
                     </div>
                     <form>
                         <label htmlFor="user_firstname" className="ml-2 text-[#A7A7A7] text-xs">FIRST NAME</label><br></br>
-                        <input className="mb-2 ml-2 h-8 w-[16rem] item-center rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        <input className="mb-2 ml-2 h-8 w-[16rem] item-center rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
                         placeholder="Johny" 
                         type="text" 
                         id="user_firstname" 
@@ -145,7 +145,7 @@ export default function Account(){
                         >
                         </input>
                         <label htmlFor="user_lastname" className="ml-2 text-[#A7A7A7] text-xs">LAST NAME</label><br></br>
-                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
                         placeholder="Gates" 
                         type="text" 
                         id="user_lastname" 
@@ -155,7 +155,7 @@ export default function Account(){
                         >
                         </input>
                         <label htmlFor="user_DOB" className="ml-2 text-[#A7A7A7] text-xs">MY BIRTHDAY</label><br></br>
-                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
                         placeholder="02/01/1996" 
                         type="date" 
                         id="user_DOB" 
@@ -165,7 +165,7 @@ export default function Account(){
                          >
                         </input>
                         <label htmlFor="phonenumber" className="ml-2 text-[#A7A7A7] text-xs">MY PHONE NUMBER</label><br></br>
-                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
                         placeholder="0812345678" 
                         type="tel" 
                         id="user_phonenumber" 
@@ -175,7 +175,7 @@ export default function Account(){
                         >
                         </input>
                         <label htmlFor="email" className="ml-2 text-[#A7A7A7] text-xs">MY EMAIL</label><br></br>
-                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
                         placeholder="Johny.Gates@gmail.com" 
                         type="email" 
                         id="user_email" 

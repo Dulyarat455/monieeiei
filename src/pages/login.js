@@ -67,7 +67,7 @@ export default function Login(){
                 <form onSubmit={submitHandler} >
                     <label className=" text-[#A7A7A7] text-xs flex font-rubik">EMAIL</label>
                     <input
-                        className="flex flex-col items-center justify-center mt-1 bg-[#FFFEF9] border-[1px] h-8 w-[16rem] rounded-lg border-opacity-30 border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
+                        className="flex flex-col items-center justify-center mt-1 bg-[#FFFEF9] border-[1px] h-8 w-[16rem] rounded-lg border-opacity-30 border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
                         placeholder="Enter your email"
                         type="email" 
                         id="user_email"
@@ -78,7 +78,7 @@ export default function Login(){
                     />
                     <label className="mt-4 text-[#A7A7A7] text-xs flex font-rubik">PASSWORD</label>
                     <input
-                        className="mt-1 bg-[#FFFEF9] border-[1px] h-8 w-[16rem] rounded-lg border-opacity-30 border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
+                        className="mt-1 bg-[#FFFEF9] border-[1px] h-8 w-[16rem] rounded-lg border-opacity-30 border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
                         placeholder="Enter your password"
                         type="password" 
                         id="user_password"
