@@ -109,7 +109,8 @@ export default function Yourinformation() {
                     </div>
                     <form>
                         <label htmlFor="username" className="ml-5 text-[#A7A7A7] text-xs">USERNAME</label><br></br>
-                        <input className="mb-5 ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light"
+                        <input className="mb-5 ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light
+                        focus:outline-none  focus:shadow-md focus:shadow-[#A7A7A7]	focus:ring-2 focus:ring-[#CA8DFF]"
                          placeholder="Create your username" 
                          type="text" 
                          id="user_username"
@@ -117,7 +118,8 @@ export default function Yourinformation() {
                          onChange={changeHandler}
                          required/>
                         <br></br> <label htmlFor="fname" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR FIRST NAME?</label><br></br>
-                        <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
+                        <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light
+                         focus:outline-none  focus:shadow-md focus:shadow-[#D8B4F8] focus:ring-2 focus:ring-[#CA8DFF]" 
                         placeholder="Ex. Johny" 
                         type="text" 
                         id="user_firstname" 
@@ -126,7 +128,8 @@ export default function Yourinformation() {
                         required/>
                         <div className="ml-5 mb-5 "></div>
                         <label htmlFor="lname" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR LAST NAME?</label><br></br>
-                        <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
+                        <input className="ml-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light
+                         focus:outline-none  focus:shadow-md focus:shadow-[#D8B4F8] focus:ring-2 focus:ring-[#CA8DFF]" 
                         placeholder="Ex. Gates" 
                         type="text" 
                         id="user_lastname"
@@ -135,7 +138,8 @@ export default function Yourinformation() {
                         required />
                         <div className="ml-5 mb-5 "></div>
                         <label htmlFor="born" className="ml-5 text-[#A7A7A7] text-xs">WHEN WERE YOU BORN?</label><br></br>
-                        <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
+                        <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light
+                         focus:outline-none  focus:shadow-md focus:shadow-[#D8B4F8] focus:ring-2 focus:ring-[#CA8DFF]" 
                         placeholder="DD/MM/YYYY" 
                         type="date" 
                         id="user_DOB" 
@@ -143,7 +147,8 @@ export default function Yourinformation() {
                         onChange={handleDateChange}/>
                         <div className="ml-5"></div>
                         <label htmlFor="phonenumber" className="ml-5 text-[#A7A7A7] text-xs">WHAT&apos;S YOUR PHONE NUMBER?</label><br></br>
-                        <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light" 
+                        <input className="ml-5 mb-5 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 border-[#757575] bg-[#FFFEF9] placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light
+                         focus:outline-none  focus:shadow-md focus:shadow-[#D8B4F8] focus:ring-2 focus:ring-[#CA8DFF]" 
                         placeholder="Ex. 0812345678" 
                         type="tel" 
                         id="user_phonenumber" 
