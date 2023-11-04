@@ -6,7 +6,7 @@ import { Rubik } from 'next/font/google'
 import Navbar from '../components/navbar';
 import Icon from  '../../public/images/Icon.svg'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
-export default function createworkspace2(){
+export default function Createworkspace2(){
   const router = useRouter();
   const { data } = router.query;
   const parsedData = data ? JSON.parse(decodeURIComponent(data)) : {};

@@ -6,7 +6,7 @@ import Navbar from '../components/navbar';
 import Icon from  '../../public/images/Icon.svg'
 import Link from 'next/link';
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
-export default function createworkspace(){
+export default function Createworkspace(){
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
     const [workspaceName, setWorkspaceName] = useState('');
