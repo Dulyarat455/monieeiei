@@ -72,7 +72,7 @@ export default function Workspace() {
             </div>
                 <div style={{fontSize: '32px', color: '#1E1E1E'}} className="text-[#1E1E1E] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
-                <div className="ml-10 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
+                <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
                 <div className="flex flex-col items-center justify-center h-full pt-4">
 
 
