@@ -75,7 +75,7 @@ export default function Workspace_dailyexpense(){
             <Searchandfilter/>
             <Navbarbottom />
             <Buttonandscroll />
-            <div className="mt-4 mb-4">
+            <div className="mt-4 mb-14">
                 <Transaction/>
                 <Transaction/>
                 <Transaction/>
