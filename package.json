@@ -17,6 +17,8 @@
     "next": "^13.5.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-multi-select-component": "^4.3.4",
+    "react-select": "^5.7.7",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
