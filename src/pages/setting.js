@@ -22,7 +22,6 @@ export default function Setting() {
             </div>
                 <div className="text-[32px] text-black font-medium font-rubik mt-4 ml-10 items-center justify-center">Setting</div>
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage members on your workspace</div>
-                <Deletemodal isVisible={Key} onClose={closeModal} />
                 <div className="pt-8 justify-center items-center">
                 <div style={{fontSize: '20px'}} className="font-rubik font-medium text-black text-xl ml-10">Members</div>
                     <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
@@ -44,12 +43,13 @@ export default function Setting() {
                     <div style={{fontSize: '20px'}} className="mt-8 font-rubik font-medium text-black text-xl items-center justify-center ml-10">Workspace</div>
                     <button 
                     type="button" 
-                    className=" mt-4 ml-12 p-2 pl-6 pr-5 border-2 border-CA8DFF text-[#C98DFF] text-sm font-medium rounded-md hover:bg-[#CA8DFF] hover:text-white" 
+                    className="mb-14 mt-4 ml-12 p-2 pl-6 pr-5 border-2 border-CA8DFF text-[#C98DFF] text-sm font-medium rounded-md hover:bg-[#CA8DFF] hover:text-white" 
                     onClick={()=> setKey(true)}>
                         DELETE A WORKSPACE 
                     </button>
                     <Navbarbottom/>
                 </div>
+                <Deletemodal isVisible={Key} onClose={closeModal} />
         </div>
 
     )

@@ -107,15 +107,13 @@ export default function Workspace() {
 
                 }
 
-                    <div className="flex flex-col justify-center items-center h-full">
+                    <div className="flex flex-col justify-center items-center h-full mb-14">
                         <Link href="/createworkspace">
-                            <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white text-xs font-rubik hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
+                            <button type="button" className="bg-[#D8B4F8] mt-4 w-44 h-12 border-bottom-4 rounded-lg text-white text-xs font-rubik hover:bg-[#CA8DFF]">CREATE A WORKSPACE</button>
                         </Link>
                     </div>
                 </div>
-                <div className="mt-12"> 
                     <Navbarbottom/>
-                    </div>
         </div>
     )
 }
