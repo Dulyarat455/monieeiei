@@ -6,6 +6,7 @@ import Navbarbottom from '../components/navbarbottom';
 import Link from "next/link";
 import Searchandfilter from "@/components/searchandfilter";
 import Transaction from "@/components/transaction";
+import Buttonandscroll from "@/components/buttonandscroll";
 
 export default function Workspace_dailyexpense(){
     const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
@@ -38,7 +39,6 @@ export default function Workspace_dailyexpense(){
             <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-8 flex">Workspace</div>
             <div className="ml-8 font-normal font-rubik text-[#A7A7A7]">Manage your workspace finances with</div>
             <div className="ml-8 font-normal text-sm font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
-            {/* Slide bar */}
             
             <nav style={{width:'100%', justifyContent:'space-between',padding:'0 30px'}} className="mt-3 h-[42px] justify-start items-center inline-flex">
                 <div className="flex-col justify-center items-center inline-flex" >
@@ -72,18 +72,24 @@ export default function Workspace_dailyexpense(){
                     <div style={{content:'" "', width: '85%', height:'4px', background:'#FAE392', bottom:'-2px', left:'20px'}} className="mt-2 ms-1.5 rounded-full"></div>)}
                 </div>
             </nav>
-            {/* Search and filter comopnent */}
             <Searchandfilter/>
-            <div className="mt-4">
+            <Navbarbottom />
+            <Buttonandscroll />
+            <div className="mt-4 mb-4">
                 <Transaction/>
-                
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
+                <Transaction/>
             </div>
-            <div className="flex justify-center items-center gap-2 h-full">
-                <Link href="/dailyexpense">
-                    <button type="button" className="mt-10 inline-block shadow-lg px-5 py-3 focus:outline-none ring-4 ring-purple-300 ring-opacity-50 bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">Add a transaction</button>
-                </Link>
-                
-            </div>
+            
             {/*<div className="flex flex-col items-center justify-center h-full mt-2">
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -109,7 +115,6 @@ export default function Workspace_dailyexpense(){
                     <button type="button" className="bg-[#D8B4F8] mt-4 w-40 h-12 border-bottom-4 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]">Add a transaction</button>
                 </Link>
             </div>*/}
-            <Navbarbottom/>
         </div>
     )
 }
