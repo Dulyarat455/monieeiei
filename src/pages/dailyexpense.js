@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { MultiSelect } from "react-multi-select-component";
 
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
-export default function dailyexpense(){
+export default function Dailyexpense(){
    const [selectedValues, setSelectedValues] = useState([]);
    const [test, setTest] = useState([]);
    const [filename, setFileName] = useState("")
