@@ -9,9 +9,9 @@ export default function Searchandfilter() {
         console.log('Check button clicked');
     }
     return(
-        <div className="w-[340px] flex mt-4 gap-2 ml-8">
-        <div className="relative">
-            <input style={{fontSize:'13px'}} className="w-[272px] h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] placeholder:font-rubik pl-2 placeholder-text-xs placeholder-font-rubik placeholder-font-normal"
+        <div style={{width:'screen', justifyContent:'space-between', padding:'0 30px'}} className="flex mt-4 gap-2">
+        <div className="relative w-screen">
+            <input style={{fontSize:'13px'}} className=" w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] placeholder:font-rubik pl-2 placeholder-text-xs placeholder-font-rubik placeholder-font-normal"
             placeholder="Search for"
             type="text"/>
             <button className="absolute right-1 translate-y-2 items-center" onClick={handleIconClick}>
@@ -28,9 +28,9 @@ export default function Searchandfilter() {
         </div>
 
             {/* Add calender */}
-            <button className="w-[34px] h-[32px] bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] flex">
+            <button className="w-[43px] h-[32px] bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] flex justify-center items-center">
                 {/*<Calender/>*/}
-                <Image alt="filter" src={filter} className="ml-1 w-6 h-6 relative mt-1"/>
+                <Image alt="filter" src={filter} className="w-6 h-6 relative"/>
             </button>
         </div>
     )
