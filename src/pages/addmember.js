@@ -44,7 +44,7 @@ export default function Addmember(){
         <div className=" w-[23.5rem] h-screen bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-[32px]">Add member</div>
-            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image></button>
+            <button><Image alt="Icon" src={Icon} className=" ml-12 mt-10"></Image></button>
             </div>
             <div className=" mt-14"></div>
             <div className="flex justify-center items-center ml-12 mb-4">
