@@ -12,6 +12,9 @@ export default function Workspace_dailyexpense(){
     const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
     const [showLine_Budget, setShowLine_Budget] = useState(false);
     const [showLine_Summary, setShowLine_Summary] = useState(false);
+    // Check if have transaction data
+    // const [isInformationAvailable, setIsInformationAvailable] = useState(true);
+
 
 
     const handleTabClick = (tabName) => {
@@ -96,10 +99,10 @@ export default function Workspace_dailyexpense(){
                     fill="none" viewBox="0 0 24 24" 
                     strokeWidth="1.5" 
                     stroke="#D9D9D9" 
-                    class="w-28 h-28 mt-12">
+                    className="w-28 h-28 mt-12">
                     <path 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                     </svg>
                     <label className="text-[#D9D9D9] text-xs font-normal font-rubik">Do not found the transactions</label>
