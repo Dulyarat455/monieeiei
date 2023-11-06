@@ -7,19 +7,24 @@ const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 import { Rubik } from 'next/font/google'
 
 export default function Transaction() {
-
+    // Popup
     const [Key, setKey] = useState(false);
+    const closeTransactionModal = () => {
+        setKey(false);
+        console.log("function")
+    };
+    //console.log("clsoe", Key)
+    // Image
     const [transactionImage, setTransactionImage] = useState(null);
     useEffect(() => {
         const uploadedImageUrl = "../../public/images/avatar.jpg"; // Replace with base64?
         handleImageUpload(uploadedImageUrl);
-      }, []); 
+    }, []); 
     
-      const handleImageUpload = (uploadedImageUrl) => {
+    const handleImageUpload = (uploadedImageUrl) => {
         setTransactionImage(uploadedImageUrl);
-      };
+    };
     
-
     // Check number characters of transaction name
     const splitText = (text, maxLength) => {
         if (text.length > maxLength) {
@@ -27,12 +32,14 @@ export default function Transaction() {
         }
         return text;
     };
+    // Data test case
     const transactionName = "Share food with others in restaurant";
     const transactionValue = -100;
     
     return(
         <div className="flex justify-start ml-8 me-8">
-        <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={()=> setKey(true)}>
+        <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={()=> {setKey(true) 
+            console.log("transaction")}}>
             <div className="w-full justify-start items-center gap-3 flex">
                 <div className="justify-start items-start gap-2.5 flex">
                     <div className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
@@ -79,8 +86,8 @@ export default function Transaction() {
                 <div style={{fontSize:'11px'}} className="text-zinc-300 text-xs font-normal font-['Rubik'] items-end ">20 Oct 2023</div>
                 </div>
             </div>
-            <Transactionmodal isVisible={Key} />
         </div>
+        <Transactionmodal isVisible={Key} onClose={closeTransactionModal} />
         </div>
     )
 }

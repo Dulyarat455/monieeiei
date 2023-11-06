@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Transactionmodal({isVisible, onClose}) {
     if ( !isVisible ) return null;
+    console.log("visiblae = ",isVisible);
 
     return(
         <div className="fixed inset-0 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
@@ -82,7 +83,8 @@ export default function Transactionmodal({isVisible, onClose}) {
                         </div>
                     </div>
                 </div>
-                    <button className="justify-start items-start mt-4 inline-flex w-[110px] h-[40px] px-8 py-4 bg-stone-50 rounded-lg border-2 border-purple-400 justify-center items-center gap-2.5 flex text-purple-400 text-sm font-medium font-['Rubik'] uppercase " >
+                    <button className="justify-start items-start mt-4 inline-flex w-[110px] h-[40px] px-8 py-4 bg-stone-50 rounded-lg border-2 border-purple-400 justify-center items-center gap-2.5 flex text-purple-400 text-sm font-medium font-['Rubik'] uppercase " onClick={() => {onClose()
+                        console.log("Hi")}}>
                         Close
                     </button>
             </div>
