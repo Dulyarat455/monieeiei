@@ -87,7 +87,7 @@ export default function Workspace_dailyexpense(){
                     </div>
                 </div>
             </div>
-            <div className="justify-start ml-8 mt-6 text-stone-900 text-3xl font-normal font-['Rubik']">Summary</div>
+            <div className="justify-start ml-8 mt-6 text-stone-900 text-[20px] font-medium font-['Rubik']">Summary</div>
             <div className="mt-4 mb-14">
                 <Summary/>
                 <Summary/>

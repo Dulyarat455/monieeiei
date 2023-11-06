@@ -9,7 +9,7 @@ export default function Summary() {
                 <div className="justify-start items-start gap-2.5 flex">
                     <div className="w-9 h-9 bg-zinc-300 rounded-full" />
                 </div>
-                <div className="text-black text-xl font-normal font-['Rubik']">User 1</div>
+                <div className="text-black text-[16px] font-normal font-['Rubik']">User 1</div>
             </div>
             <div className="w-full flex-col justify-end items-end gap-2 inline-flex">
                 <div className="text-black text-xs font-normal font-['Rubik']">Spending</div>
