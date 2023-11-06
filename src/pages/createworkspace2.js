@@ -105,10 +105,10 @@ export default function Createworkspace2(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div classname=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div className=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-5xl">Create a</div>
-            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> </button>
+            <button><Image alt="Icon" src={Icon} className=" ml-12 mt-14"></Image></button>
             </div>
             <div className="font-rubik text-5xl ml-[4.3rem] mt-3">Workspace</div>
             <div className=" mt-14"></div>

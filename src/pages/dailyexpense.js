@@ -104,10 +104,10 @@ export default function Dailyexpense(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div classname="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div className="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 text-[32px] font-[500] ml-20">Daily Expense</div>
-            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> </button>
+            <button><Image alt="Icon" src={Icon} className=" ml-10 mt-10"></Image></button>
             </div>
             <div className=" text-[400] text-[#9B7C0D] text-[20px] ml-24">10 Oct 2023 8.35pm</div> {/*ใส่วันที่*/}
             <div className=" mt-14"></div>
