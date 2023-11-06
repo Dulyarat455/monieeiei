@@ -4,9 +4,10 @@ import Navbar from "../components/navbar";
 import { Rubik } from 'next/font/google'
 import Navbarbottom from '../components/navbarbottom';
 import Link from "next/link";
-import Searchandfilter from "@/components/searchandfilter";
 import Transaction from "@/components/transaction";
-import Buttonandscroll from "@/components/buttonandscroll";
+import Searchandfilter_daily from "@/components/searchandfilter_daily";
+import Scroll from "@/components/scroll";
+import Button from "@/components/button";
 
 export default function Workspace_dailyexpense(){
     const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
@@ -75,9 +76,10 @@ export default function Workspace_dailyexpense(){
                     <div style={{content:'" "', width: '85%', height:'4px', background:'#FAE392', bottom:'-2px', left:'20px'}} className="mt-2 ms-1.5 rounded-full"></div>)}
                 </div>
             </nav>
-            <Searchandfilter/>
+            <Searchandfilter_daily/>
             <Navbarbottom />
-            <Buttonandscroll />
+            <Button/>
+            <Scroll/>
             <div className="mt-4 mb-14">
                 <Transaction/>
                 <Transaction/>
