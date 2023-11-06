@@ -14,12 +14,10 @@ export default function Viewproportion(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div class=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div classname=" w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-28 text-[32px] text-[500]">Propotion</div>
-            <Link href="https://www.youtube.com/watch?v=nlPYear59oQ">
-            <Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> 
-            </Link>
+            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> </button>
             </div>
             <div>
             <div className=" inline-flex ">

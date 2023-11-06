@@ -104,12 +104,10 @@ export default function Dailyexpense(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div class="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div classname="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 text-[32px] font-[500] ml-20">Daily Expense</div>
-            <Link href="https://www.youtube.com/watch?v=nlPYear59oQ">
-            <Image alt="Icon" src={Icon} className="ml-10 mt-12"></Image> 
-            </Link>
+            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> </button>
             </div>
             <div className=" text-[400] text-[#9B7C0D] text-[20px] ml-24">10 Oct 2023 8.35pm</div> {/*ใส่วันที่*/}
             <div className=" mt-14"></div>
@@ -220,9 +218,9 @@ export default function Dailyexpense(){
       </div>
       <div className="mt-2">
         <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">ATTACH A PHOTO</label><br></br>
-        <div className="inline-flex">
-        <div className="pl-5 pt-3 text-[#9B7C0D] text-[12px] font-[400] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] w-[16rem]  ml-14 h-10">{filename}</div>
-        <label htmlFor="picture" className=""><Image alt="upload" src={upload} className="mt-3 ml-2 "></Image></label><br></br></div>
+        <div className="inline-flex ">
+        <div className="pl-5 pt-3 text-[#9B7C0D] text-[12px] font-[400]  rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] w-[16rem]   ml-14 h-10">{filename}</div>
+        <label htmlFor="picture" className=""><Image alt="upload" src={upload} className="mt-3 ml-3 "></Image></label></div>
         <input className="mb-5  invisible hidden" 
         type="file"  
         accept=".jpg, .jpeg, .png"    

@@ -41,12 +41,10 @@ export default function Addmember(){
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
         <div className="flex flex-col items-center justify-center h-full ">
         <Navbar></Navbar>
-        <div class=" w-[23.5rem] h-screen bg-[#FAE392] rounded-t-[36px] mt-10">
+        <div className=" w-[23.5rem] h-screen bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-[32px]">Add member</div>
-            <Link href="https://www.youtube.com/watch?v=nlPYear59oQ">
-            <Image alt="Icon" src={Icon} className="ml-10 mt-10"></Image> 
-            </Link>
+            <button><Image alt="Icon" src={Icon} className=" ml-16 mt-14"></Image> </button>
             </div>
             <div className=" mt-14"></div>
             <div className="flex justify-center items-center ml-12 mb-4">
