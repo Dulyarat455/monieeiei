@@ -12,7 +12,8 @@ export default function Transaction() {
     const [Key, setKey] = useState(false);
 
     return(
-        <div style={{width:'screen'}} className="left-0 h-[105px] mt-2 ml-8 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={()=> setKey(true)}>
+        <div className="flex justify-start ml-8 me-8">
+        <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={()=> setKey(true)}>
             <div className="w-full justify-start items-center gap-2.5 flex">
                 <div className="justify-start items-start gap-2.5 flex">
                     <div className="w-10 h-10 bg-zinc-300 rounded-full">
@@ -58,6 +59,6 @@ export default function Transaction() {
             </div>
             <Transactionmodal isVisible={Key} />
         </div>
-
+        </div>
     )
 }
