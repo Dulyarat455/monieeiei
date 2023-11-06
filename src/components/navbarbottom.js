@@ -24,6 +24,9 @@ export default function Navbarbottom(){
         }else if(currentPath === "/setting"){
             setActiveItemWorkspace('#9747FF')
             setActiveItemAccount('black')
+        }else if(currentPath === "/workspace_budget"){
+            setActiveItemAccount('#9747FF')
+            setActiveItemWorkspace('black')
         }
     }, [currentPath]);
 

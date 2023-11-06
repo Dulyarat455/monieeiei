@@ -46,7 +46,7 @@ export default function Transaction() {
                 </div>
                 <div className="w-full flex-col justify-start items-start gap-1 inline-flex">
                     <div className="justify-start items-center gap-1 inline-flex">
-                        <div style={{fontSize:'14px'}} className="text-black text-base font-normal font-rubik">{splitText(transactionName, 12)}</div>
+                        <div className="text-black text-base font-normal font-rubik">{splitText(transactionName, 12)}</div>
                         <div className="justify-end items-end">
                             {/* Check if have member show this */}
                             <div className="w-[32px] h-4 bg-purple-300 rounded-lg text-center text-white text-[8px] font-normal font-['Rubik'] flex items-center justify-center " >5 ppl</div>

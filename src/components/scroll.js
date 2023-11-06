@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 import Link from "next/link";
 
-export default function Buttonandscroll() {
+export default function Scroll() {
 
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
@@ -10,10 +10,7 @@ export default function Buttonandscroll() {
 
     return(
         <div className="fixed bottom-16 right-0 left-0 flex justify-center items-center gap-2">
-                <Link href="/dailyexpense">
-                    <button type="button" className="mt-10 inline-block shadow-lg px-5 py-3 focus:outline-none ring-4 ring-purple-300 ring-opacity-50 bg-[#D8B4F8] mt-4 w-42 h-11 border-bottom-4 rounded-lg text-white font-rubik text-xs hover:bg-[#CA8DFF]">ADD A TRANSACTION</button>
-                </Link>
-                <button className="fixed bottom-16 right-11 w-8 h-8 p-2.5 bg-[#FFDF6E] rounded-full justify-center items-center inline-flex" 
+                <button className="fixed bottom-16 right-8 w-8 h-8 p-2.5 bg-[#FFDF6E] rounded-full justify-center items-center inline-flex" 
                     onClick={() => {
                     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
                      }} 
