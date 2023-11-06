@@ -65,7 +65,7 @@ export default function Createworkspace(){
          />
             </form>
         <div className="inline-flex">
-        <button className="bg-[#FFFEF9] mt-10 ml-12 w-32 h-10 rounded-xl text-[#CA8DFF] font-rubik text-sm hover:bg-[#CA8DFF] hover:text-[#FFFFFF]" onClick={()=>{moveBack()}}>BACK</button>
+        <button className="bg-[#FFFEF9] mt-10 ml-12 w-32 h-10 rounded-xl border-2 border-[#CA8DFF] text-[#CA8DFF] font-rubik text-sm hover:bg-[#CA8DFF] hover:text-[#FFFFFF]" onClick={()=>{moveBack()}}>BACK</button>
         <button className="bg-[#D8B4F8] mt-10 ml-5  w-32 h-10 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" onClick={()=>{movePage()}}>NEXT STEP</button>
         </div>
         </div>
