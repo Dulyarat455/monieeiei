@@ -5,8 +5,10 @@ import { Rubik } from 'next/font/google'
 import Navbarbottom from '../components/navbarbottom';
 import Link from "next/link";
 import Scroll from "@/components/scroll";
-import Searchandfilter_budget from "@/components/searchandfilter_bugdet";
 import Category from "@/components/category";
+import Slidebar from "@/components/slidebar";
+import Image from "next/image";
+import filter from '../../public/images/filter.png'
 
 export default function Workspace_dailyexpense(){
     const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
@@ -14,6 +16,10 @@ export default function Workspace_dailyexpense(){
     const [showLine_Summary, setShowLine_Summary] = useState(false);
     // Check if have transaction data
     // const [isInformationAvailable, setIsInformationAvailable] = useState(true);
+    const handleIconClick = () => {
+        // Check is search icon ontop
+        console.log('Check button clicked');
+    }
 
 
 
@@ -43,39 +49,46 @@ export default function Workspace_dailyexpense(){
             <div className="ml-8 font-normal font-rubik text-[#A7A7A7]">Manage your workspace finances with</div>
             <div className="ml-8 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
             
-            <nav style={{width:'100%', justifyContent:'space-between',padding:'0 30px'}} className="mt-3 h-[42px] justify-start items-center inline-flex">
-                <div className="flex-col justify-center items-center inline-flex" >
-                    <button onClick={() => handleTabClick("dailyExpense")}
-                    className={`p-1 ms-0 bg-[#FFFDF8] hover:bg-[#FAE392] hover:shadow-md border-2 border-[#FFDF6F] rounded-lg justify-center items-center inline-flex ${
-                    showLine_dailyExpense ? "active-tab" : ""
-                    }`}>
-                        <div style={{fontSize:'11px'}} className="text-[#FFDF6F] hover:text-[#9B7C0D] text-xs font-medium font-rubik uppercase ">Daily Expense</div>
+            <Slidebar/>
+            {/* Search */}
+            <div style={{width:'screen', justifyContent:'space-between', padding:'0 30px'}} className="flex mt-4 gap-2 justify-center items-center">
+                <div className="relative w-screen">
+                    <input style={{fontSize:'13px'}} className=" w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] placeholder:font-rubik pl-2 placeholder-text-xs placeholder-font-rubik placeholder-font-normal"
+                    placeholder="Search for"
+                    type="text"/>
+                    <button className="absolute right-1 translate-y-2 items-cente inline-flexr" onClick={handleIconClick}>
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 32 32" 
+                        strokeWidth="1.5" 
+                        stroke="#A7A7A7" 
+                        className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
                     </button>
-                    { showLine_dailyExpense && (
-                    <div style={{content:'" "', width: '85%', height:'4px', background:'#FAE392', bottom:'-2px', left:'20px'}} className="mt-2 rounded-full" ></div>)}
                 </div>
-                <div>
-                    <button onClick={() => handleTabClick("budgetManagement")}
-                    className={`p-1 me-0 bg-[#FFFDF8] w-[140px] hover:bg-[#FAE392] hover:shadow-md rounded-lg border-2 border-[#FFDF6F] justify-center items-center gap-2 flex ${
-                    showLine_Budget ? "active-tab" : ""
-                    }`}>
-                        <div style={{fontSize:'11px'}} className="text-[#FFDF6F] hover:text-[#9B7C0D] text-xs font-medium font-rubik uppercase">Budget management</div>
-                    </button>
-                    {showLine_Budget && (
-                    <div style={{content:'" "', width: '90%', height:'4px', background:'#FAE392', bottom:'-2px'}} className="mt-2 ms-2 rounded-full"></div>)}
+
+                <button href="/" className="px-3 py-2.5 bg-purple-300 hover:bg-purple-400 rounded-lg justify-center items-center gap-2.5 inline-flex text-white text-xs font-normal font-['Rubik']">
+                Proportion
+                </button>
+            </div>
+            {/* Calendar */}
+            <div style={{width:'screen', justifyContent:'space-between', padding:'0 30px'}} className="flex mt-2 justify-start items-center">
+                <div style={{fontSize:'11px',whiteSpace: 'nowrap'}} className="text-neutral-400 text-xs font-normal font-['Rubik'] me-2 ml-1">Filter by:</div>
+                <div style={{ marginLeft: '-6px' }} className="relative w-full inline-flex justify-end items-center">
+                    <input style={{fontSize:'13px'}} className="w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
+                    placeholder="MM/DD/YYYY"
+                    type="date"/>
                 </div>
-                <div>
-                    <button onClick={() => handleTabClick("summary")}
-                    className={`p-1 bg-[#FFFDF8] hover:shadow-md hover:bg-[#FAE392] rounded-lg border-2 border-[#FFDF6F] justify-center items-center flex ${
-                    showLine_Summary ? "active-tab" : ""
-                    }`}>
-                        <div style={{fontSize:'11px'}} className="text-[#FFDF6F] hover:text-[#9B7C0D] text-xs font-medium font-rubik uppercase">Summary</div>
-                    </button>
-                    {showLine_Summary && (
-                    <div style={{content:'" "', width: '85%', height:'4px', background:'#FAE392', bottom:'-2px', left:'20px'}} className="mt-2 ms-1.5 rounded-full"></div>)}
+                    <div className=" text-neutral-400 text-xs font-normal justify-center items-center font-['Rubik'] ml-1 me-6">-</div>
+                <div style={{ marginLeft: '-22px',MarginBlockEnd:'2px',width:'screen' }} className="relative w-full inline-flex justify-end items-center ">
+                    <input style={{fontSize:'13px'}} className=" w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
+                    placeholder="MM/DD/YYYY"
+                    type="date"/>
+                    
                 </div>
-            </nav>
-            <Searchandfilter_budget/>
+            </div>
             <Navbarbottom />
             <Scroll />
             <div className="mb-24">
