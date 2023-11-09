@@ -25,7 +25,7 @@ export default function Dailyexpense(){
    const [owner_status , setOwner_status] = useState("")
    const [info, setInfo] = useState({
 
-      workspace_id: "",
+      workspace_id: 0,
       workspace_name:"",
       tran_name: "",
       tran_type: "",
@@ -73,9 +73,11 @@ export default function Dailyexpense(){
       setOwner_status(ownerStatus)
       
       setToken(token);
-      setInfo({ ...info, ["workspace_id"]: workspace_id });
-      setInfo({ ...info, ["workspace_name"]: workspaceName });
 
+
+      setInfo({ ...info, ["workspace_id"]: workspaceId ,["workspace_name"]: workspaceName }); 
+    
+      
       const res = fetch("/api/workspace/getworkspacemember", {
         method: "POST",
         headers: {
