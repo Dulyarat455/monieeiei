@@ -8,11 +8,20 @@ export default function Workspacename({workspace_name, workspace_id , owner_stat
     const [workspaceName, setWorkspaceName] = useState(""); // Store the workspace name
     const router = useRouter();
 
+    
+
+    const saveLocal = () => {
+        localStorage.setItem("workspace_name",workspace_name);
+        localStorage.setItem("workspace_id",workspace_id);
+        localStorage.setItem("owner_status",owner_status);
+
+    }
+
     console.log("in componet = ", workspace_name,workspace_id)
 
     return(
         <div className="workspace-container mt-4 relative">
-            <button style={{ width: '300px', height: '80px'}} className="bg-[#FAE392] hover:bg-[#FFDF6F] rounded-2xl justify-center items-center gap-2.5 inline-flex">
+            <button style={{ width: '300px', height: '80px'}} className="bg-[#FAE392] hover:bg-[#FFDF6F] rounded-2xl justify-center items-center gap-2.5 inline-flex" onClick={()=>{saveLocal()}}>
                 <div style={{fontSize: 26}} className={`text-lg text-[#9B7C0D] hover:text-[#9B7C0D] font-normal font-rubik justify-center items-center ${inter.className}`}>
                     {workspace_name ? workspace_name : "Workspace’s Name"}
                 </div>
