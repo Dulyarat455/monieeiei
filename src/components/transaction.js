@@ -65,17 +65,22 @@ export default function Transaction( prop ) {
     
     return(
         <div className="flex justify-start ml-8 me-8">
-        <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={()=> {setKey(true) 
-            console.log("transaction")}}>
+        <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={(e)=> { 
+            
+            if (!e.target.id || e.target.id !== "Image") {
+                setKey(true);
+            }
+            
+            }}>
             <div className="w-full justify-start items-center gap-3 flex">
                 <div className="justify-start items-start gap-2.5 flex">
-                    <div className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
+                    <div id="Image" className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
                         {photo ? ( // Check if have upload image or not
                         // <Image alt="Default Picture" src={Avatar} className="w-10 h-10 rounded-full" />
-                        <Image src={photo} alt="Base64 Image" width={300} height={200} />
+                        <Image id="Image" src={photo} alt="Base64 Image" width={300} height={200} onClick={()=> {console.log("hellophoto")}}/>
                         ) : (
                         /* Display a image icon if no user-uploaded image */
-                        <Image alt="Picture" src={Picture} className="w-7 h-7 rounded-full" />
+                        <Image id="Image" alt="Picture" src={Picture} className="w-7 h-7 rounded-full" />
                         )}
                     </div>
                 </div>
