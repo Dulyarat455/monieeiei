@@ -35,8 +35,8 @@ export default function Slidebar() {
         <nav style={{width:'100%', justifyContent:'space-between',padding:'0 30px'}} className="mt-3 h-[42px] justify-start items-center inline-flex gap-1">
                 <div className="w-[100%] justify-start items-start inline-flex">
                     <Link href="/workspace_dailyexpense" className="w-full">
-                    <button className={`p-1 w-[100px] sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full ${activeDaily  ? "bg-[#FAE392] shadow-md": "bg-[#FFFDF8]"} border-2 border-[#FFDF6F] rounded-lg justify-center items-center inline-flex `}>
-                        <div style={{fontSize:'11px'}} className={` ${activeDaily  ? "text-[#9B7C0D]": "text-[#FFDF6F]"}      text-xs font-medium font-rubik uppercase `}>Daily Expense</div>
+                    <button className={`p-1 w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full ${activeDaily  ? "bg-[#FAE392] shadow-md": "bg-[#FFFDF8]"} border-2 border-[#FFDF6F] rounded-lg justify-center items-center inline-flex `}>
+                        <div style={{fontSize:'11px',whiteSpace: 'nowrap'}} className={` ${activeDaily  ? "text-[#9B7C0D]": "text-[#FFDF6F]"} text-xs font-medium font-rubik uppercase `}>Daily Expense</div>
                     </button>
                     { activeDaily === true && (
                     <div style={{content:'" "', height:'4px', background:'#FAE392', bottom:'-2px'}} className="mt-2 ms-1 sm:ms-1.5 w-[90%] sm:w-[95%] rounded-full"></div> )}
@@ -44,8 +44,8 @@ export default function Slidebar() {
                 </div>
                 <div className="w-full justify-start items-start inline-flex">
                 <Link href="/workspace_budget" className="w-full">
-                    <button href="/workspace_budget" className={`p-1 me-0 w-[140px] sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full ${activeBudget  ? "bg-[#FAE392] shadow-md": "bg-[#FFFDF8]"}   rounded-lg border-2 border-[#FFDF6F] justify-center items-center gap-2 flex `}>
-                        <div style={{fontSize:'11px'}} className={`${activeBudget  ? "text-[#9B7C0D]": "text-[#FFDF6F]"} text-xs font-medium font-rubik uppercase`}>Budget management</div>
+                    <button href="/workspace_budget" className={`p-1 me-0 w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full ${activeBudget  ? "bg-[#FAE392] shadow-md": "bg-[#FFFDF8]"}   rounded-lg border-2 border-[#FFDF6F] justify-center items-center gap-2 flex `}>
+                        <div style={{fontSize:'11px',whiteSpace: 'nowrap'}} className={`${activeBudget  ? "text-[#9B7C0D]": "text-[#FFDF6F]"} text-xs font-medium font-rubik uppercase`}>Budget management</div>
                     </button>
                     { activeBudget === true &&
                     (<div style={{content:'" "',height:'4px', background:'#FAE392', bottom:'-2px'}} className="mt-2 ms-1.5 sm:ms-2 w-[90%] sm:w-[95%] rounded-full"></div>)}
