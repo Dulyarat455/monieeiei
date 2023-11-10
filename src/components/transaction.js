@@ -16,6 +16,7 @@ export default function Transaction( prop ) {
 
     // Popup
     const [Key, setKey] = useState(false);
+    const [zoom, setZoom] = useState(false);
     const closeTransactionModal = () => {
         setKey(false);
         console.log("function")
@@ -51,9 +52,6 @@ export default function Transaction( prop ) {
         return formattedDate;
     }
     
-    
- 
-    
     // Check number characters of transaction name
     const splitText = (text, maxLength) => {
         if (text.length > maxLength) {
@@ -61,13 +59,14 @@ export default function Transaction( prop ) {
         }
         return text;
     };
+
     
-    
+    console.log(zoom)
     return(
-        <div className="flex justify-start ml-8 me-8">
+        <div className="flex justify-start ml-8 me-8" >
         <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={(e)=> { 
             
-            if (!e.target.id || e.target.id !== "Image") {
+            if (!e.target.id || e.target.id !== "Image" ) {
                 setKey(true);
             }
             
@@ -77,13 +76,19 @@ export default function Transaction( prop ) {
                     <div id="Image" className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
                         {photo ? ( // Check if have upload image or not
                         // <Image alt="Default Picture" src={Avatar} className="w-10 h-10 rounded-full" />
-                        <Image id="Image" src={photo} alt="Base64 Image" width={300} height={200} onClick={()=> {console.log("hellophoto")}}/>
+                        <Image id="Image" src={photo} alt="Base64 Image" className="w-10 h-10 rounded-full " width={300} height={200} onClick={()=> {setZoom(true) 
+                            console.log("hellophoto")}}/>
                         ) : (
                         /* Display a image icon if no user-uploaded image */
                         <Image id="Image" alt="Picture" src={Picture} className="w-7 h-7 rounded-full" />
                         )}
                     </div>
+                    <div className="justify-center items-center">
+                    {zoom === true && (<Image id="Image" src={photo} alt="Base64 Image" className="fixed inset-10 mt-40 right-4 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center " width={300} height={200} onClick={() => {setZoom(false) 
+                    console.log("Zoom")}}/>)}
+                    </div>
                 </div>
+            
                 <div className="w-full flex-col justify-start items-start gap-1 inline-flex">
                     <div className="justify-start items-center gap-1 inline-flex">
                         <div className="text-black text-base font-normal font-rubik">{splitText(tran_name, 12)}</div>
