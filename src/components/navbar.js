@@ -71,6 +71,9 @@ export default function Navbar  (){
                             <Link href={"/profile"}>
                                 <div className="inline-block px-2 py-4 text-[#CA8DFF]  hover:bg-[#D8B4F8] hover:text-white">Profile</div>
                             </Link>
+                            <Link href={"/launchpage"}>
+                                <div className="inline-block px-2 py-4 text-[0.7rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">About us</div>
+                            </Link>
                             <Link href={"/logout"}>
                                 <div className="inline-block px-2 py-4 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">Log out</div>
                             </Link>
