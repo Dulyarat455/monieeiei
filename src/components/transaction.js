@@ -64,6 +64,13 @@ export default function Transaction( prop ) {
     console.log(zoom)
     return(
         <div className="flex justify-start ml-8 me-8" >
+            {zoom === true && (
+                <div className="fixed inset-0 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+                    <div className="relative justify-center items-center">
+                        <Image id="Image" src={photo} alt="Base64 Image" width={300} height={200} onClick={() => {setZoom(false) 
+                        console.log("Zoom")}}/>
+                    </div>
+                </div>)}
         <div className="w-full h-[105px] mt-2 px-3 py-3 bg-white rounded-lg border border-[#D9D9D9] justify-center items-center gap-[3px] inline-flex" onClick={(e)=> { 
             
             if (!e.target.id || e.target.id !== "Image" ) {
@@ -83,10 +90,7 @@ export default function Transaction( prop ) {
                         <Image id="Image" alt="Picture" src={Picture} className="w-7 h-7 rounded-full" />
                         )}
                     </div>
-                    <div className="justify-center items-center">
-                    {zoom === true && (<Image id="Image" src={photo} alt="Base64 Image" className="fixed inset-10 mt-40 right-4 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center " width={300} height={200} onClick={() => {setZoom(false) 
-                    console.log("Zoom")}}/>)}
-                    </div>
+                    
                 </div>
             
                 <div className="w-full flex-col justify-start items-start gap-1 inline-flex">
