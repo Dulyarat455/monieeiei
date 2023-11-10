@@ -10,7 +10,7 @@ export default function Transactionmodal({isVisible, onClose}) {
                 {/* Query Transaction's name */}
                 <div className="text-center text-stone-900 text-2xl font-medium font-['Rubik']">Transaction’s name</div>
                 {/* Query Date/Month/Year Time */}
-                <div className="text-yellow-700 text-xl font-normal font-['Rubik']">10 Oct 2023 8.35 PM</div>
+                <div className="text-yellow-700 text-xl font-normal font-['Rubik']">10 Oct 2023</div>
                 <div className="flex-col justify-start items-start gap-3 flex">
                     <div className="justify-start items-center gap-2 inline-flex mt-4">
                         <div className="flex-col justify-start items-start gap-1 inline-flex">
