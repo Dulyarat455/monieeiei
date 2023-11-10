@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 import Navbar from "../components/navbar";
 import { Rubik } from 'next/font/google'
@@ -12,34 +12,75 @@ import Image from "next/image";
 import filter from '../../public/images/filter.png'
 
 export default function Workspace_dailyexpense(){
-    /*const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
-    const [showLine_Budget, setShowLine_Budget] = useState(false);
-    const [showLine_Summary, setShowLine_Summary] = useState(false);
-    // Check if have transaction data
-    // const [isInformationAvailable, setIsInformationAvailable] = useState(true);
+
+    const [info, setInfo] = useState([]);
+ 
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const workspaceId = parseInt(localStorage.getItem("workspace_id"));
+        const res = fetch("/api/workspace/gettransactions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+                 body: JSON.stringify(({workspace_id:workspaceId})),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                 console.log(data)
+                 console.log("length = ", data.gettransactions.length)
+                 let arraytran = []
+                 for ( let i=0 ; i< data.gettransactions.length; i++){
+                    const transaction = data.gettransactions[i];
+
+                        // Create a new object for each transaction
+                        const newTransaction = {
+                            tran_name: transaction.tran_name,
+                            tran_type: transaction.tran_type,
+                            username_member: transaction.username_member,
+                            count_member: transaction.count_member,
+                            pocket_name: transaction.pocket_name,
+                            category_name: transaction.category_name,
+                            amount: transaction.amount,
+                            bought_date: transaction.bought_date,
+                            photo: transaction.photo,
+                            owner_name: transaction.owner_name,
+                            owner_id: transaction.user_id
+                        };
+
+                        
+                        arraytran.push(newTransaction)
+                        
+                       
+                 }
+                setInfo(arraytran)
+                 
+
+
+                } else {
+                  console.log(data)
+                 
+                }
+            }
+            );
+    
+
+
+    }, []);
 
 
 
-     const handleTabClick = (tabName) => {
-        if (tabName === "dailyExpense") {
-          setShowLine_dailyExpense(true);
-          setShowLine_Budget(false);
-          setShowLine_Summary(false);
-        } else if (tabName === "budgetManagement") {
-          setShowLine_dailyExpense(false);
-          setShowLine_Budget(true);
-          setShowLine_Summary(false);
-        } else if (tabName === "summary") {
-          setShowLine_dailyExpense(false);
-          setShowLine_Budget(false);
-          setShowLine_Summary(true);
-        }
-      }; */
+
 
       const handleIconClick = () => {
         // Check is search icon ontop
         console.log('Check button clicked');
     }
+
+    console.log("info = ",info)
 
 
     return(
@@ -89,6 +130,17 @@ export default function Workspace_dailyexpense(){
             <Button/>
             <Scroll/>
             <div className="mt-4 mb-14">
+            {info.map((tran,index) => ( 
+                
+                <Transaction key={index} tran_name = {tran.tran_name}  tran_type = {tran.tran_type} 
+                username_member = {tran.username_member} count_member = {tran.count_member} 
+                pocket_name = {tran.pocket_name} category_name = {tran.category_name} amount = {tran.amount} 
+                bought_date = {tran.bought_date} photo = {tran.photo} owner_name = {tran.owner_name} 
+                owner_id = {tran.owner_id} />
+                
+            ))}
+
+                {/* <Transaction/>
                 <Transaction/>
                 <Transaction/>
                 <Transaction/>
@@ -98,9 +150,7 @@ export default function Workspace_dailyexpense(){
                 <Transaction/>
                 <Transaction/>
                 <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
+                <Transaction/> */}
             </div>
             
             {/*<div className="flex flex-col items-center justify-center h-full mt-2">

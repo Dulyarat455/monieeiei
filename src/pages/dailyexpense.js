@@ -121,8 +121,13 @@ export default function Dailyexpense(){
 
 
     const changeHandler = (e) => {
-      
-      setInfo({ ...info, [e.target.name]: e.target.value });
+
+      if(e.target.name === "amount"){
+        setInfo({ ...info, [e.target.name]: parseFloat(e.target.value) });
+      }
+      else{
+        setInfo({ ...info, [e.target.name]: e.target.value });
+      }
    }
 
    const changeRadio = (e) =>{

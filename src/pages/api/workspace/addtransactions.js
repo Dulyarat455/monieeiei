@@ -102,7 +102,7 @@ export default  async  function addtransactions (req,res)  {
                   photo: photo,
                   category_name: category_name,
                   bought_date: bought_date,
-                  amount: amount
+                  amount: parseFloat(amount)
                   
             
                 });
@@ -137,10 +137,12 @@ export default  async  function addtransactions (req,res)  {
                   transworkspace_id: count,
                   tran_type: 0,
                   tran_name: tran_name,
+                  tran_member: tran_member,
                   pocket_name: pocket_name,
                   photo: photo,
+                  category_name: "",
                   bought_date: bought_date,
-                  amount: amount
+                  amount: parseFloat(amount)
                   
             
                 });

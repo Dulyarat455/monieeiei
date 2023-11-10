@@ -1,29 +1,58 @@
 import React,{useState,useEffect} from "react";
+import jwt from 'jsonwebtoken';
+import { format } from 'date-fns';
+
 import Image from "next/image";
 import Picture from '../../public/images/image.png'
-import Avatar from '../../public/images/avatar.jpg'
 import Transactionmodal from "./transactionmodal";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 import { Rubik } from 'next/font/google'
 
-export default function Transaction() {
+export default function Transaction( prop ) {
+    const { tran_name,tran_type, username_member,count_member
+        ,pocket_name,category_name,amount,bought_date ,photo,owner_name
+        ,owner_id} = prop
+    const [user_id, setUser_Id] = useState(0);    
+
     // Popup
     const [Key, setKey] = useState(false);
     const closeTransactionModal = () => {
         setKey(false);
         console.log("function")
     };
-    //console.log("clsoe", Key)
-    // Image
-    const [transactionImage, setTransactionImage] = useState(null);
-    useEffect(() => {
-        const uploadedImageUrl = "../../public/images/avatar.jpg"; // Replace with base64?
-        handleImageUpload(uploadedImageUrl);
-    }, []); 
+
+      useEffect(() => {
+        const token = localStorage.getItem("token");
+        const decoded =   jwt.decode(token)
+        const { user_id } = decoded || {};
+        setUser_Id(user_id)
+    }, []);
+
+    const formatMonetaryValue = (value) => {
+        if (isNaN(value)) {
+            console.error("Invalid number");
+            return "";
+          }
+        
+          // Use toLocaleString for formatting with commas
+          return value.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          });
+    }
+
+    const formatDate = (dateString) => {
+        // Parse the date string
+        const date = new Date(dateString);
+
+        // Format the date using date-fns
+        const formattedDate = format(date, 'dd MMM yyyy');
+
+        return formattedDate;
+    }
     
-    const handleImageUpload = (uploadedImageUrl) => {
-        setTransactionImage(uploadedImageUrl);
-    };
+    
+ 
     
     // Check number characters of transaction name
     const splitText = (text, maxLength) => {
@@ -32,9 +61,7 @@ export default function Transaction() {
         }
         return text;
     };
-    // Data test case
-    const transactionName = "Share food with others in restaurant";
-    const transactionValue = -100;
+    
     
     return(
         <div className="flex justify-start ml-8 me-8">
@@ -43,8 +70,9 @@ export default function Transaction() {
             <div className="w-full justify-start items-center gap-3 flex">
                 <div className="justify-start items-start gap-2.5 flex">
                     <div className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
-                        {transactionImage ? ( // Check if have upload image or not
-                        <Image alt="Default Picture" src={Avatar} className="w-10 h-10 rounded-full" />
+                        {photo ? ( // Check if have upload image or not
+                        // <Image alt="Default Picture" src={Avatar} className="w-10 h-10 rounded-full" />
+                        <Image src={photo} alt="Base64 Image" width={300} height={200} />
                         ) : (
                         /* Display a image icon if no user-uploaded image */
                         <Image alt="Picture" src={Picture} className="w-7 h-7 rounded-full" />
@@ -53,41 +81,47 @@ export default function Transaction() {
                 </div>
                 <div className="w-full flex-col justify-start items-start gap-1 inline-flex">
                     <div className="justify-start items-center gap-1 inline-flex">
-                        <div className="text-black text-base font-normal font-rubik">{splitText(transactionName, 12)}</div>
+                        <div className="text-black text-base font-normal font-rubik">{splitText(tran_name, 12)}</div>
                         <div className="justify-end items-end">
                             {/* Check if have member show this */}
-                            <div className="w-[32px] h-4 bg-purple-300 rounded-lg text-center text-white text-[8px] font-normal font-['Rubik'] flex items-center justify-center " >5 ppl</div>
+                            <div className="w-[32px] h-4 bg-purple-300 rounded-lg text-center text-white text-[8px] font-normal font-['Rubik'] flex items-center justify-center " >{count_member}ppl</div>
                         </div>
                     </div>
                     <div className="justify-start items-start gap-1 inline-flex">
-                        <div className=" px-1.5 py-1 bg-cyan-100 bg-opacity-75 rounded justify-center items-center gap-2.5 flex">
+                        { category_name.length > 0 && (<div className=" px-1.5 py-1 bg-cyan-100 bg-opacity-75 rounded justify-center items-center gap-2.5 flex">
                             {/* Query category and Pcocket's name */}
                             {/* If some of this doesn't have show only one */}
-                            <div style={{fontSize:'11px'}} className="text-cyan-700 text-xs font-normal font-rubik">Category</div>
-                            </div>
+                            
+                            <div style={{fontSize:'11px'}} className="text-cyan-700 text-xs font-normal font-rubik">{category_name}</div>
+                            </div>)}
                         <div className="px-1.5 py-1 bg-pink-200 bg-opacity-75 rounded justify-center items-center gap-2.5 flex">
-                            <div style={{fontSize:'11px'}} className="text-pink-500 text-xs font-normal font-rubik">Pocket’s name</div>
+                            <div style={{fontSize:'11px'}} className="text-pink-500 text-xs font-normal font-rubik">{pocket_name}</div>
                         </div>
                     </div>
                     <div className="justify-start items-center gap-1 inline-flex">
                         <div style={{fontSize:'11px'}} className="text-neutral-500 text-xs font-normal font-rubik">Created by </div>
                         {/* Query Username that create this transaction */}
-                        <div style={{fontSize:'11px'}} className="text-stone-900 text-xs font-normal font-['Rubik']">Username</div>
+                        { user_id === owner_id && (
+                        <div style={{fontSize:'11px'}} className="text-stone-900 text-xs font-normal font-['Rubik']">You</div>)}
+                        { user_id !== owner_id && (
+                        <div style={{fontSize:'11px'}} className="text-stone-900 text-xs font-normal font-['Rubik']">{owner_name}</div>)}
                     </div>
                 </div>
             </div>
             <div className="w-[85px] flex-col justify-start items-end gap-[2px] inline-flex">
-                <div className={`text-${transactionValue >= 0 ? 'green-700' : 'rose-700'} text-xl font-normal`}>
-                    {transactionValue >= 0 ? `+ ${transactionValue}` : `- ${Math.abs(transactionValue)}`}
+                <div className={`text-${tran_type === 0 ? 'green-700' : 'rose-700'} text-xl font-normal`}>
+                    {tran_type === 0 ? `+${formatMonetaryValue(amount)}` : `-${formatMonetaryValue(Math.abs(amount))}`}
                 </div>
                 <div className="flex-col items-end inline-flex">
                 {/* Query time and Date/Month/Year that create this transaction */}
-                <div style={{fontSize:'11px'}} className="text-zinc-300 text-xs font-normal font-['Rubik'] items-end ">8.35 PM</div>
-                <div style={{fontSize:'11px'}} className="text-zinc-300 text-xs font-normal font-['Rubik'] items-end ">20 Oct 2023</div>
+                
+                <div style={{fontSize:'11px'}} className="text-zinc-300 text-xs font-normal font-['Rubik'] items-end ">{formatDate(bought_date)}</div>
                 </div>
             </div>
         </div>
-        <Transactionmodal isVisible={Key} onClose={closeTransactionModal} />
+        <Transactionmodal isVisible={Key} tran_name = {tran_name} tran_type = {tran_type} bought_date = {bought_date} 
+        category_name = {category_name} pocket_name = {pocket_name} amount = {amount}
+        username_member = {username_member} onClose={closeTransactionModal} />
         </div>
     )
 }
