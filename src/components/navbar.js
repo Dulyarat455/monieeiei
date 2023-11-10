@@ -37,7 +37,13 @@ export default function Navbar  (){
 
 
     }, []);
+    // State to manage the visibility of the dropdown
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+    // Function to toggle the visibility of the dropdown
+    const toggleDropdown = () => {
+        setDropdownOpen(!isDropdownOpen);
+    };
 
     return(
         <nav>
@@ -55,11 +61,22 @@ export default function Navbar  (){
             { countNotification !== 0  && (<div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                  {countNotification}
             </div>)}
-            <Link href={"/"}>     
-                <div>
-                    <Image src={user} alt="user" width={50} className=" ml-5 mr-5"/>
+            <div className="ml-5 relative">
+                    <div className="cursor-pointer" onClick={toggleDropdown}>
+                        <Image src={user} alt="user" width={50} className="cursor-pointer"/>
+                    </div>
+                    {/* Dropdown Content */}
+                    {isDropdownOpen && (
+                        <div className="absolute top-12 bg-white shadow-xl rounded-[0.3rem] border-[1px] border-[#CA8DFF] py-1 mt-3">
+                            <Link href={"/profile"}>
+                                <div className="inline-block px-2 py-4 text-[#CA8DFF]  hover:bg-[#D8B4F8] hover:text-white">Profile</div>
+                            </Link>
+                            <Link href={"/logout"}>
+                                <div className="inline-block px-2 py-4 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">Log out</div>
+                            </Link>
+                        </div>
+                    )}
                 </div>
-            </Link>
             </div>
         </nav>
     )
