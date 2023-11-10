@@ -77,7 +77,7 @@ export default function Workspace_dailyexpense(){
 
             </div>
             {/* Calendar */}
-            <div style={{width:'100%', justifyContent:'space-between',padding:'0 30px'}} className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full flex mt-2 justify-start items-center">
+            <div style={{justifyContent:'space-between',padding:'0 30px'}} className="w-screen flex mt-2 justify-start items-center">
                 <div className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full inline-flex justify-start items-center">
                     <div style={{fontSize:'13px',whiteSpace: 'nowrap'}} className="text-neutral-400 text-xs font-normal font-['Rubik'] me-2 ml-2">Filter by:</div>
                     <input style={{fontSize:'13px'}} className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
