@@ -17,7 +17,7 @@ export default function Listnoti1({ username, workspacename, time, date, status 
       <Image alt="whitecircle" src={whitecircle} className="mb-10"></Image>
       <div className="ml-3 w-[15rem]">
         <div className="text-[16px] text-[400]">
-          {time} {getTimePeriod(time)}
+          {time} {getTimePeriod(time)} / {date}
         </div>
         <p className={`text-[16px] text-[400] ${textColor} whitespace-normal`}>
           {username} sent a request form {workspacename}&rsquo;s workspace to you for a sec.
