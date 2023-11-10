@@ -129,7 +129,7 @@ export default function Workspace_dailyexpense(){
             <Navbarbottom />
             <Button/>
             <Scroll/>
-            <div className="mt-4 mb-14">
+            <div className="mt-4 mb-24">
             {info.map((tran,index) => ( 
                 
                 <Transaction key={index} tran_name = {tran.tran_name}  tran_type = {tran.tran_type} 
