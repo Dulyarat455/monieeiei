@@ -55,7 +55,7 @@ export default function Navbar  (){
             { countNotification !== 0  && (<div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                  {countNotification}
             </div>)}
-            <Link href={"/"} className="">     
+            <Link href={"/"}>     
                 <div>
                     <Image src={user} alt="user" width={50} className=" ml-5 mr-5"/>
                 </div>

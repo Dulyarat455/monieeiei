@@ -24,19 +24,19 @@ export default function Notification(){
             </div>
             <div className=" text-[500] text-[20px] ml-10 mt-10">Today</div>
        <div className="ml-10 mt-5"> 
-            <Listnoti1 time={"11.23"} date={"10 oct 2022"} status={0}></Listnoti1>
-            <Listnoti1 time={"11.23"} date={"10 oct 2022"}></Listnoti1>
-            <Listnoti1 time={"11.23"} date={"10 oct 2022"}></Listnoti1>
-            <Listnoti1 time={"11.23"} date={"10 oct 2022"}></Listnoti1>
-            <Listnoti1 time={"11.23"} date={"10 oct 2022"}></Listnoti1>
+            <Listnoti1 time={"09:11"} date={"10 oct 2022"} status={0}></Listnoti1>
+            <Listnoti1 time={"09:11"} date={"10 oct 2022"} status={0}></Listnoti1>
+            <Listnoti1 time={"09:11"} date={"10 oct 2022"} status={0}></Listnoti1>
+            <Listnoti1 time={"09:11"} date={"10 oct 2022"} status={0}></Listnoti1>
+            <Listnoti1 time={"09:11"} date={"10 oct 2022"} status={0}></Listnoti1>
        </div>
        <div className=" text-[500] text-[20px] ml-10 mt-5">Day ago</div>
        <div className="ml-10 mt-5"> 
-            <Listnoti2 time={"11.23"} date={"10 oct 2022"}></Listnoti2>
-            <Listnoti2 time={"11.23"} date={"10 oct 2022"}></Listnoti2>
-            <Listnoti2 time={"11.23"} date={"10 oct 2022"}></Listnoti2>
-            <Listnoti2 time={"11.23"} date={"10 oct 2022"}></Listnoti2>
-            <Listnoti2 time={"11.23"} date={"10 oct 2022"}></Listnoti2>
+            <Listnoti2 time={"12.23"} date={"10 oct 2022"} status={1}></Listnoti2>
+            <Listnoti2 time={"12.23"} date={"10 oct 2022"} status={1}></Listnoti2>
+            <Listnoti2 time={"12.23"} date={"10 oct 2022"} status={1}></Listnoti2>
+            <Listnoti2 time={"12.23"} date={"10 oct 2022"} status={1}></Listnoti2>
+            <Listnoti2 time={"12.23"} date={"10 oct 2022"} status={1}></Listnoti2>
        </div>
         </div>
         </div>
