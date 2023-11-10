@@ -60,6 +60,11 @@ export default function Transaction( prop ) {
         return text;
     };
 
+    const closeZoomModal = () => {
+        setZoom(false);
+        console.log("icon close image")
+      };
+
     
     console.log(zoom)
     return(
@@ -67,6 +72,14 @@ export default function Transaction( prop ) {
             {zoom === true && (
                 <div className="fixed inset-0 bg-[#757575] bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
                     <div className="relative justify-center items-center">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="#FAE392" 
+                        className="w-7 h-7 absolute top-2 right-2"
+                        onClick={closeZoomModal}>
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+                        </svg>
                         <Image id="Image" src={photo} alt="Base64 Image" width={300} height={200} onClick={() => {setZoom(false) 
                         console.log("Zoom")}}/>
                     </div>
@@ -83,7 +96,7 @@ export default function Transaction( prop ) {
                     <div id="Image" className="w-10 h-10 bg-zinc-300 rounded-full flex items-center justify-center">
                         {photo ? ( // Check if have upload image or not
                         // <Image alt="Default Picture" src={Avatar} className="w-10 h-10 rounded-full" />
-                        <Image id="Image" src={photo} alt="Base64 Image" className="w-10 h-10 rounded-full " width={300} height={200} onClick={()=> {setZoom(true) 
+                        <Image id="Image" src={photo} alt="Base64 Image" className="w-10 h-10 rounded-full" width={300} height={200} onClick={()=> {setZoom(true) 
                             console.log("hellophoto")}}/>
                         ) : (
                         /* Display a image icon if no user-uploaded image */
