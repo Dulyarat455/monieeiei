@@ -113,14 +113,14 @@ export default function Workspace_dailyexpense(){
                 </div>
             </div>
             {/* Calendar */}
-            <div style={{width:'screen', justifyContent:'space-between',padding:'0 30px'}} className="flex mt-2 justify-start items-center">
-                <div className="relative w-full max-w-screen-sm mx-auto md:max-w-screen-2xl inline-flex justify-start items-center">
-                    <div style={{fontSize:'13px',whiteSpace: 'nowrap'}} className="text-neutral-400 text-xs font-normal font-['Rubik'] me-2 ml-1">Filter by:</div>
-                    <input style={{fontSize:'13px'}} className="w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
+            <div style={{width:'100%', justifyContent:'space-between',padding:'0 30px'}} className="sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full flex mt-2 justify-start items-center">
+                <div className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full inline-flex justify-start items-center">
+                    <div style={{fontSize:'13px',whiteSpace: 'nowrap'}} className="text-neutral-400 text-xs font-normal font-['Rubik'] me-2 ml-2">Filter by:</div>
+                    <input style={{fontSize:'13px'}} className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
                     placeholder="MM/DD/YYYY"
                     type="date"/>
-                    <div className=" text-neutral-400 text-xs font-normal justify-center items-center font-['Rubik'] ml-2 me-2">-</div>
-                    <input style={{fontSize:'13px'}} className="justify-end w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
+                    <div className="text-neutral-400 text-xs font-normal justify-center items-center font-['Rubik'] ml-2 me-2">-</div>
+                    <input style={{fontSize:'13px'}} className="justify-end w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
                     placeholder="MM/DD/YYYY"
                     type="date"/>
                 </div>
