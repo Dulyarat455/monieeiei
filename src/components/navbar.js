@@ -9,7 +9,8 @@ import logo2 from '../../public/images/logo2.png'
 
 export default function Navbar  (){
     const [countNotification, setCountNotification] = useState(0);
-    
+     // State to manage the visibility of the dropdown
+     const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -37,8 +38,34 @@ export default function Navbar  (){
 
 
     }, []);
-    // State to manage the visibility of the dropdown
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+    const setReadStatus = () => {
+        const token = localStorage.getItem("token");
+        const res = fetch("/api/notification/setstatusnotifications", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+            
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                  
+                console.log(data.message)
+             
+                } else {
+                  console.log(data)
+                 
+                }
+            }
+            );
+    };
+
+
+
+   
 
     // Function to toggle the visibility of the dropdown
     const toggleDropdown = () => {
@@ -53,7 +80,7 @@ export default function Navbar  (){
                     <Image src={logo2} alt="logo2" width={50} className="ml-4"/>
                 </div>
             </Link>
-            <Link href={"/notification"}>
+            <Link href={"/notification"} onClick={()=>{setReadStatus()}}>
                 <div>
                     <Image src={noti} alt="noti" width={20} className=" mt-3 ml-40"/>
                 </div>

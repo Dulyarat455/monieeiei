@@ -18,7 +18,7 @@ export default function Workspace_dailyexpense(){
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        const workspaceId = parseInt(localStorage.getItem("workspace_id"));
+        const workspaceId = localStorage.getItem("workspace_id");
         const res = fetch("/api/workspace/gettransactions", {
             method: "POST",
             headers: {

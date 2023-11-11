@@ -1,7 +1,7 @@
 import { MongoClient, ServerApiVersion  } from 'mongodb';
 import jwt from 'jsonwebtoken';
-
-
+import { format } from 'date-fns';
+import { v4 as uuidv4 } from 'uuid';
 export default  async  function createworkspace (req,res)  {
 
     const uri = "mongodb+srv://Monie:1234@cluster0.jl8dvxy.mongodb.net/?retryWrites=true&w=majority";
@@ -40,6 +40,7 @@ export default  async  function createworkspace (req,res)  {
                 const workspace  = client.db('monieeiei').collection('Workspace');
                 const workspaceOwners = client.db('monieeiei').collection('Workspace owner list');
                 const workspaceMembers = client.db('monieeiei').collection('Workspace member list');
+                const  notifications = client.db('monieeiei').collection('Notification');
 
                 let count
                 let setOwner
@@ -50,6 +51,43 @@ export default  async  function createworkspace (req,res)  {
                     if(!checkperson){
                         return( res.status(400).json({message: 'Not found this email in system', success: false}))
                     }
+                }
+
+
+                   //set time
+                   const options = {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true,
+                    timeZone: 'Asia/Bangkok', // Indochina Time (GMT+7)
+                  };
+                 const formatter = new Intl.DateTimeFormat('en-US', options);
+                 const currentTime = new Date();
+  
+                 //set formatdate
+                 const tzOffset = 7; // Offset for Indochina Time (GMT+7)
+                 const dateNow = new Date(Date.now() + tzOffset * 3600000).toISOString().split('T')[0];
+  
+                //  const formatDate = (dateString) => {
+                //   // Parse the date string
+                //   const date = new Date(dateString);
+          
+                //   // Format the date using date-fns
+                //   const formattedDate = format(date, 'dd MMM yyyy');
+          
+                //   return formattedDate;
+                //  }
+                  
+                const keyId = uuidv4();
+
+                 let count_notification ;
+                 const countNotification = await notifications.aggregate( [
+                   { $count: "myCount" }
+                ] ).toArray();
+                if(countNotification.length === 0){
+                   count_notification = 0
+                }else {
+                   count_notification =   countNotification[0].myCount
                 }
 
                  
@@ -67,7 +105,7 @@ export default  async  function createworkspace (req,res)  {
 
                 const createworkspace = await workspace.insertOne({
 
-                    workspace_id: count,
+                    workspace_id: keyId,
                     workspace_name:workspace_name,
                     max_ppl: 1+i
 
@@ -78,22 +116,49 @@ export default  async  function createworkspace (req,res)  {
                 if(createworkspace){
                     setOwner = await workspaceOwners.insertOne({
                     user_id: user_id,
-                    workspace_id: count
+                    workspace_id: keyId
                   })
                   setMemberOwner = await workspaceMembers.insertOne({
                     user_id: user_id,
-                    workspace_id: count
+                    workspace_id: keyId
                   })
 
+                  const result = await notifications.insertOne({
+
+                    user_id: user_id,
+                    notification_id: count_notification,
+                    notification_type: 1,
+                    description: `You have created a workspace ${workspace_name} success .`,
+                    time_stamp : (formatter.format(currentTime)).toString(),
+                    date:  dateNow,
+                    read_status: 0
+                  });
+                  count_notification = count_notification + 1;
+
+
                 }
+
                 if(setOwner && setMemberOwner){
 
                     for (let j=0 ; j< member_list.length; j++){
                         const checkperson  = await person.findOne({user_email: member_list[j]},{})
                        const setMember = await workspaceMembers.insertOne({
                             user_id: checkperson.user_id,
-                            workspace_id: count
+                            workspace_id: keyId
                           })
+                          const result = await notifications.insertOne({
+
+                            user_id: checkperson.user_id,
+                            notification_id: count_notification,
+                            notification_type: 1,
+                            description: `You have been added to the workspace ${workspace_name} .`,
+                            time_stamp : (formatter.format(currentTime)).toString(),
+                            date:  dateNow,
+                            read_status: 0
+                          });
+                          count_notification = count_notification + 1;
+
+
                     }
                     
 

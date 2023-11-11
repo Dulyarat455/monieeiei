@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { Rubik } from 'next/font/google'
 import Navbar from '../components/navbar';
@@ -10,6 +11,7 @@ import { MultiSelect } from "react-multi-select-component";
 
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function Dailyexpense(){
+   const router = useRouter();
    const [selectedValues, setSelectedValues] = useState([]);
    const [selectedValuesRequest, setSelectedValuesRequest] = useState([]);
    const [filename, setFileName] = useState("")
@@ -66,7 +68,7 @@ export default function Dailyexpense(){
     useEffect(() => {
       const token = localStorage.getItem("token");
       const workspaceName = localStorage.getItem("workspace_name");
-      const workspaceId = parseInt(localStorage.getItem("workspace_id"));
+      const workspaceId = localStorage.getItem("workspace_id");
       const ownerStatus = parseInt(localStorage.getItem("owner_status"));
       setWorkspace_name(workspaceName)
       setWorkspace_id(workspaceId)
@@ -212,9 +214,9 @@ export default function Dailyexpense(){
             setMessage(data.message);
             setMessagestatus(true);
 
-            // setTimeout(() => {
-            //     router.push("/createworkspace");
-            // }, 1000);
+            setTimeout(() => {
+                router.push("/workspace_dailyexpense");
+            }, 1000);
 
             } else {
               console.log(data)

@@ -1,6 +1,7 @@
 import { MongoClient, ServerApiVersion  } from 'mongodb';
 import jwt from 'jsonwebtoken';
-
+import { format } from 'date-fns';
+import { v4 as uuidv4 } from 'uuid';
 
 export default  async  function addtransactions (req,res)  {
 
@@ -56,6 +57,33 @@ export default  async  function addtransactions (req,res)  {
                 const  workspaceTransactions = client.db('monieeiei').collection('Workspace transaction');
                 const  notifications = client.db('monieeiei').collection('Notification');
 
+                //set time
+                const options = {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: true,
+                  timeZone: 'Asia/Bangkok', // Indochina Time (GMT+7)
+                };
+               const formatter = new Intl.DateTimeFormat('en-US', options);
+               const currentTime = new Date();
+
+               //set formatdate
+               const tzOffset = 7; // Offset for Indochina Time (GMT+7)
+               const dateNow = new Date(Date.now() + tzOffset * 3600000).toISOString().split('T')[0];
+
+               const keyId = uuidv4();
+
+              //  const formatDate = (dateString) => {
+              //   // Parse the date string
+              //   const date = new Date(dateString);
+        
+              //   // Format the date using date-fns
+              //   const formattedDate = format(date, 'dd MMM yyyy');
+        
+              //   return formattedDate;
+              //  }
+
+
                 let count ;
                 const countTransactions = await workspaceTransactions.aggregate( [
                   { $count: "myCount" }
@@ -94,7 +122,7 @@ export default  async  function addtransactions (req,res)  {
 
                   workspace_id: workspace_id,
                   user_id: user_id,
-                  transworkspace_id: count,
+                  transworkspace_id: keyId,
                   tran_type: 1,
                   tran_name: tran_name,
                   tran_member:  tran_member,
@@ -115,10 +143,14 @@ export default  async  function addtransactions (req,res)  {
                       user_id: request_member[i],
                       notification_id: count_notification,
                       notification_type: 0,
-                      description: `Please don't forget the cost ${tran_name} for workspace ${workspace_name}`
+                      description: `Please don't forget the cost ${tran_name} for workspace ${workspace_name}`,
+                      time_stamp : (formatter.format(currentTime)).toString(),
+                      date:  dateNow,
+                      read_status: 0
                     });
                     count_notification = count_notification + 1;
                   }
+                  
                 }
 
                   return( res.status(200).json({ message: 'add transaction success', success: true}))
