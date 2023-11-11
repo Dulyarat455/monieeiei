@@ -104,10 +104,16 @@ export default function Transactionmodal(prop) {
                         </div>)}
                     </div>
                 </div>
+                <div className="inline-flex gap-2">
                     <button className="justify-start items-start mt-4 inline-flex w-[110px] h-[40px] px-8 py-4 bg-stone-50 rounded-lg border-2 border-purple-400 justify-center items-center gap-2.5 flex text-purple-400 text-sm font-medium font-['Rubik'] uppercase " onClick={() => {onClose()
                         console.log("Hi")}}>
                         Close
                     </button>
+                    <button className="justify-start items-start mt-4 inline-flex w-[110px] h-[40px] px-8 py-4 bg-purple-300 hover:bg-white rounded-lg border-2 border-purple-300 hover:border-purple-400 justify-center items-center gap-2.5 flex text-white hover:text-purple-400 text-sm font-medium font-['Rubik'] uppercase " onClick={() => {
+                        console.log("delete")}}>
+                        Delete
+                    </button>
+                </div>
             </div>
         </div>
     )
