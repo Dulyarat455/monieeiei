@@ -11,8 +11,8 @@ import { Rubik } from 'next/font/google'
 export default function Transaction( prop ) {
     const { tran_name,tran_type, username_member,count_member
         ,pocket_name,category_name,amount,bought_date ,photo,owner_name
-        ,owner_id} = prop
-    const [user_id, setUser_Id] = useState(0);    
+        ,owner_id,transworkspace_id } = prop
+    const [user_id, setUser_Id] = useState("");    
 
     // Popup
     const [Key, setKey] = useState(false);
@@ -148,7 +148,7 @@ export default function Transaction( prop ) {
         </div>
         <Transactionmodal isVisible={Key} tran_name = {tran_name} tran_type = {tran_type} bought_date = {bought_date} 
         category_name = {category_name} pocket_name = {pocket_name} amount = {amount}
-        username_member = {username_member} onClose={closeTransactionModal} />
+        username_member = {username_member} owner_id = {owner_id} transworkspace_id = {transworkspace_id} onClose={closeTransactionModal} />
         </div>
     )
 }

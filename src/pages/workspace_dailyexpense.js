@@ -49,7 +49,8 @@ export default function Workspace_dailyexpense(){
                             bought_date: transaction.bought_date,
                             photo: transaction.photo,
                             owner_name: transaction.owner_name,
-                            owner_id: transaction.user_id
+                            owner_id: transaction.user_id,
+                            transworkspace_id: transaction.transworkspace_id
                         };
 
                         
@@ -138,7 +139,7 @@ export default function Workspace_dailyexpense(){
                 username_member = {tran.username_member} count_member = {tran.count_member} 
                 pocket_name = {tran.pocket_name} category_name = {tran.category_name} amount = {tran.amount} 
                 bought_date = {tran.bought_date} photo = {tran.photo} owner_name = {tran.owner_name} 
-                owner_id = {tran.owner_id} />
+                owner_id = {tran.owner_id} transworkspace_id = {tran.transworkspace_id} />
                 
             ))}
 

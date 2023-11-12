@@ -102,7 +102,7 @@ export default function Dailyexpense(){
                 setOptionMember(optionmembers)
                 // console.log("object = ",optionmembers)
 
-            setMessage(data.message);
+            setMessage("Please fill in your information.");
             setMessagestatus(true);
 
             // setTimeout(() => {
@@ -196,36 +196,67 @@ export default function Dailyexpense(){
 
     const submitHandler = () => {
 
-      const res = fetch("/api/workspace/addtransactions", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "auth-token": token,
-        },
-        body: JSON.stringify((info)),
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            if (data.success) {
+      if(info["amount"]  && info["tran_name"] && (info["tran_type"] === 1 || info["tran_type"] === 0 ) && info["bought_date"] && info["pocket_name"]){
 
-                console.log(data.success)
+          if((info["category_name"] && info["tran_type"] === 1) || info["tran_type"] === 0 ){
+            const res = fetch("/api/workspace/addtransactions", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  "auth-token": token,
+              },
+              body: JSON.stringify((info)),
+              })
+              .then((res) => res.json())
+              .then((data) => {
+                  if (data.success) {
+
+                      console.log(data.success)
 
 
-            setMessage(data.message);
-            setMessagestatus(true);
+                  setMessage(data.message);
+                  setMessagestatus(true);
 
-            setTimeout(() => {
-                router.push("/workspace_dailyexpense");
-            }, 1000);
+                  setTimeout(() => {
+                      router.push("/workspace_dailyexpense");
+                  }, 1000);
 
-            } else {
-              console.log(data)
-              setMessage(data.message)
+                  } else {
+                    console.log(data)
+                    setMessage(data.message)
+                    setMessagestatus(false)
+                  }
+              }
+              );
+            }    
+
+            else if((!info["category_name"] && info["tran_type"] === 1)){
+              setMessage("Please select category name.")
               setMessagestatus(false)
             }
-        }
-        );
+      }
+      else if((!info["tran_name"])){
+        setMessage("Please enter transaction name.")
+        setMessagestatus(false)
 
+      }
+      else if(!(info["tran_type"] === 1 || info["tran_type"] === 0 )){
+        setMessage("Please select type of transaction.")
+        setMessagestatus(false)
+      }
+      else if((!info["pocket_name"])){
+        setMessage("Please enter pocket name.")
+        setMessagestatus(false)
+      }
+      else if((!info["amount"])){
+        setMessage("Please enter amount .")
+        setMessagestatus(false)
+      }
+     
+      else if((!info["bought_date"])){
+        setMessage("Please enter a date.")
+        setMessagestatus(false)
+      }
     }
 
     console.log(info)
@@ -250,7 +281,7 @@ export default function Dailyexpense(){
                     {message && <p className={`${messagestatus ? "text-green-400": "text-red-500"} w-full text-left text-sm`}>{message}</p>}
             </div>
             <form>
-            <label htmlFor="name" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400] ">NAME</label><br></br>
+            <label htmlFor="name" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400] ">{"NAME*"}</label><br></br>
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30  bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal text-[#9B7C0D] text-[12px] font-[400]" 
         placeholder="Ex. Taxi fee (Supermarket)" 
         type="text" 
@@ -259,7 +290,7 @@ export default function Dailyexpense(){
         onChange={changeHandler}
         required
          /><br></br>
-          <label htmlFor="type" className=" ml-14 text-[#9B7C0D]  mt-2 text-[12px] font-[400]">TYPE OF TRANSACTION</label><br></br>
+          <label htmlFor="type" className=" ml-14 text-[#9B7C0D]  mt-2 text-[12px] font-[400]">{"TYPE OF TRANSACTION*"}</label><br></br>
         <div className=" inline-flex mt-2  ml-10">
         <input className="ml-10"
         type="radio" 
@@ -280,7 +311,7 @@ export default function Dailyexpense(){
          { radioCheck === 1 && (
 
          <div className="mt-2">
-         <label htmlFor="category" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">CATEGORY OF EXPENSE</label><br></br>
+         <label htmlFor="category" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">{"CATEGORY OF EXPENSE*"}</label><br></br>
          <select name="category_name" id="category_name" onChange={changeHandler} className="text-[#9B7C0D] text-[14px] font-[400]  ml-14 pl-4 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575]">
         <option className="ml-5" value=""  disabled selected>Select category</option>
         <option value="food">Food</option>
@@ -315,7 +346,7 @@ export default function Dailyexpense(){
      </div>
 
      <div className="mt-2">
-      <label htmlFor="pocket" className=" ml-14 text-[#9B7C0D]  text-[12px] font-[400]">POCKET</label><br></br>
+      <label htmlFor="pocket" className=" ml-14 text-[#9B7C0D]  text-[12px] font-[400]">{"POCKET*"}</label><br></br>
          <select name="pocket_name" id="pocket_name" onChange={changeHandler}   className="text-[#9B7C0D] text-[14px] font-[400]  ml-14 pl-4 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575]">
         <option className="ml-5" value="" disabled selected>Select pocket</option>
         <option value="kbank">Kbank</option>
@@ -345,7 +376,7 @@ export default function Dailyexpense(){
      
 
     <div className="mt-2">
-     <label htmlFor="total" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">TOTAL</label><br></br>
+     <label htmlFor="total" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">{"TOTAL*"}</label><br></br>
         <input className="ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] text-[#9B7C0D] text-[12px] font-[400]  placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal placeholder:pl-48" 
         type="text" 
         id="total"
@@ -370,7 +401,7 @@ export default function Dailyexpense(){
          />
        </div>
        <div className="mt-2">
-        <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">SET A DATE MANUALLY</label><br></br>
+        <label htmlFor="a" className=" ml-14 text-[#9B7C0D] text-[12px] font-[400]">{"SET A DATE MANUALLY*"}</label><br></br>
         <div className="inline-flex">
         <input className="ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] text-[#9B7C0D] text-[12px] font-[400]  placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal placeholder:pl-48" 
                         placeholder="DD/MM/YYYY" 
@@ -404,7 +435,7 @@ export default function Dailyexpense(){
         </form>
         {/* <Image src={base64Image} alt="Base64 Image" width={300} height={200} /> */}
         <div className="inline-flex">
-        <button className="bg-[#FFFEF9] mt-10 ml-12 w-32 h-10 rounded-xl text-[#CA8DFF] font-rubik text-sm hover:bg-[#CA8DFF] hover:text-[#FFFFFF]">BACK</button>
+        <button className="bg-[#FFFEF9] mt-10 ml-12 w-32 h-10 rounded-xl text-[#CA8DFF] font-rubik text-sm hover:bg-[#CA8DFF] hover:text-[#FFFFFF]" onClick={()=>{router.push("/workspace_dailyexpense")}}>BACK</button>
         <button className="bg-[#D8B4F8] mt-10 ml-5 mb-10 w-32 h-10 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" onClick={() => {submitHandler()}}>ADD NOW</button>
         </div>
         </div>
