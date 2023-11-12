@@ -15,11 +15,19 @@ import Workspacesetting from "@/components/workspacesetting";
 export default function Workspace_dailyexpense(){
 
     const [info, setInfo] = useState([]);
- 
+    const [message, setMessage] = useState("");
+    const [messagestatus, setMessagestatus] = useState(false);
+    const [fillter, setFillter] = useState({
+        workspace_id: "",
+        tran_name: "",
+        dateIn: "",
+        dateOut: ""
+      });
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         const workspaceId = localStorage.getItem("workspace_id");
+        setFillter({ ...fillter, ["workspace_id"]: workspaceId });
         const res = fetch("/api/workspace/gettransactions", {
             method: "POST",
             headers: {
@@ -75,15 +83,77 @@ export default function Workspace_dailyexpense(){
 
 
 
-
+    const changeHandler = (e) => {
+        setFillter({ ...fillter, [e.target.name]: e.target.value });
+     }
 
       const handleIconClick = () => {
         // Check is search icon ontop
         console.log('Check button clicked');
+
+        const token = localStorage.getItem("token");
+        const workspaceId = localStorage.getItem("workspace_id");
+        if((fillter["dateIn"] < fillter["dateOut"]) || (fillter["dateIn"] === fillter["dateOut"]) || (!fillter["dateIn"] && !fillter["dateOut"])){
+                const res = fetch("/api/workspace/gettransactionsfillter", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "auth-token": token,
+                    },
+                        body: JSON.stringify((fillter)),
+                    })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.success) {
+                        console.log(data)
+                        console.log("length = ", data.gettransactions.length)
+                        let arraytran = []
+                        for ( let i=0 ; i< data.gettransactions.length; i++){
+                            const transaction = data.gettransactions[i];
+
+                                // Create a new object for each transaction
+                                const newTransaction = {
+                                    tran_name: transaction.tran_name,
+                                    tran_type: transaction.tran_type,
+                                    username_member: transaction.username_member,
+                                    count_member: transaction.count_member,
+                                    pocket_name: transaction.pocket_name,
+                                    category_name: transaction.category_name,
+                                    amount: transaction.amount,
+                                    bought_date: transaction.bought_date,
+                                    photo: transaction.photo,
+                                    owner_name: transaction.owner_name,
+                                    owner_id: transaction.user_id,
+                                    transworkspace_id: transaction.transworkspace_id
+                                };
+
+                                
+                                arraytran.push(newTransaction)
+                                
+                            
+                        }
+                        setInfo(arraytran)
+                        setMessage("")
+
+
+                        } else {
+                        console.log(data)
+                        setMessage(data.message)
+                        setMessagestatus(false)
+                        }
+                    }
+                    );
+
+        }
+        else{
+              setMessage("Wrong date selection format!")
+              setMessagestatus(false)
+        }  
+
     }
 
-    console.log("info = ",info)
-
+    // console.log("info = ",info)
+    // console.log("fillter = ",fillter)
 
     return(
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
@@ -100,7 +170,12 @@ export default function Workspace_dailyexpense(){
                 <div className="relative w-screen inline-flex gap-1">
                     <input style={{fontSize:'13px'}} className=" w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] placeholder:font-rubik pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
                     placeholder="Search for"
-                    type="text"/>
+                    type="text"
+                    id="tran_name"
+                    name="tran_name"
+                    onChange={changeHandler}
+                    />
+
                     <button className="absolute right-11 translate-y-2 items-center" onClick={handleIconClick}>
                         <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -121,14 +196,24 @@ export default function Workspace_dailyexpense(){
                     <div style={{fontSize:'13px',whiteSpace: 'nowrap'}} className="text-neutral-400 text-xs font-normal font-['Rubik'] me-2 ml-2">Filter by:</div>
                     <input style={{fontSize:'13px'}} className="w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
                     placeholder="MM/DD/YYYY"
-                    type="date"/>
+                    type="date"
+                    id="dateIn"
+                    name="dateIn"
+                    onChange={changeHandler}
+                    />
                     <div className="text-neutral-400 text-xs font-normal justify-center items-center font-['Rubik'] ml-2 me-2">-</div>
                     <input style={{fontSize:'13px'}} className="justify-end w-full sm:w-full md:w-full lg:w-full xl:w-full 2xl:w-full h-[32px] p-2.5 bg-[#FFFEF9] rounded-lg border border-[#D9D9D9] focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#A6A6A6] pl-2 placeholder-text-xs text-neutral-400 placeholder-font-rubik placeholder-font-normal"
                     placeholder="MM/DD/YYYY"
-                    type="date"/>
+                    type="date"
+                    id="dateOut"
+                    name="dateOut"
+                    onChange={changeHandler}
+                    />
                 </div>
             </div>
-            
+            {message &&<div className="flex justify-center items-center ml-10 mt-1">
+                             <p className={`${messagestatus ? "text-green-400": "text-red-500"} w-full text-left text-sm`}>{message}</p>
+            </div>}
             <Navbarbottom />
             <Button/>
             <Scroll/>
