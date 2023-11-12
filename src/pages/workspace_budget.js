@@ -71,7 +71,7 @@ export default function Workspace_dailyexpense(){
                     <Workspacesetting/>
                 </div>
                 <Link href="/setproportion">
-                <button className="px-3 py-2.5 bg-purple-300 hover:bg-purple-400 rounded-lg justify-center items-center gap-2.5 inline-flex text-white text-xs font-normal font-['Rubik']">
+                <button className="px-3 py-2.5 h-[32px] bg-purple-300 hover:bg-purple-400 rounded-lg justify-center items-center gap-2.5 inline-flex text-white text-xs font-normal font-['Rubik']">
                 Proportion
                 </button>
                 </Link>
