@@ -41,6 +41,8 @@ export default  async  function createworkspace (req,res)  {
                 const workspaceOwners = client.db('monieeiei').collection('Workspace owner list');
                 const workspaceMembers = client.db('monieeiei').collection('Workspace member list');
                 const  notifications = client.db('monieeiei').collection('Notification');
+                const  workspaceproportion = client.db('monieeiei').collection('Workspace proportion');
+                const  getbudget = client.db('monieeiei').collection('budget');
 
                 let count
                 let setOwner
@@ -160,8 +162,30 @@ export default  async  function createworkspace (req,res)  {
 
 
                     }
-                    
 
+                    const setproportion = await workspaceproportion.insertOne({
+
+                      percent0: 10,
+                      percent1: 10,
+                      percent2: 10,
+                      percent3: 10,
+                      percent4: 10,
+                      percent5: 10,
+                      percent6: 10,
+                      percent7: 10,
+                      percent8: 10,
+                      percent9: 10,
+                      workspace_id: keyId,
+                      workspaceproportion_id: uuidv4()
+
+                    });
+
+
+                    const setbudget = await getbudget.insertOne({
+                      budget_value: 0,
+                      workspace_id: keyId,
+                      budget_id: uuidv4()
+                    });
                 }
                    
                 

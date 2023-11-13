@@ -324,8 +324,8 @@ export default function Dailyexpense(){
         <option value="education">Education</option>
         <option value="technlogy">Technlogy</option>
         <option value="saving">Saving</option>
-        <option value="membership">Membership</option>
         </select>
+
       </div> )
       }
 

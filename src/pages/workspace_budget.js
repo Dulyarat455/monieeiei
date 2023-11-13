@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 import Navbar from "../components/navbar";
 import { Rubik } from 'next/font/google'
@@ -12,34 +12,43 @@ import filter from '../../public/images/filter.png'
 import Workspacesetting from "@/components/workspacesetting";
 
 export default function Workspace_dailyexpense(){
-    const [showLine_dailyExpense, setShowLine_dailyExpense] = useState(false);
-    const [showLine_Budget, setShowLine_Budget] = useState(false);
-    const [showLine_Summary, setShowLine_Summary] = useState(false);
-    // Check if have transaction data
-    // const [isInformationAvailable, setIsInformationAvailable] = useState(true);
+    const [info, setInfo] = useState([]);
+    
     const handleIconClick = () => {
         // Check is search icon ontop
         console.log('Check button clicked');
     }
 
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const workspaceId = localStorage.getItem("workspace_id");
+        
+        const res = fetch("/api/budget/getbudgetmanagement", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+                 body: JSON.stringify(({workspace_id:workspaceId})),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                 
+                setInfo(data.array)
+                 
 
 
-    const handleTabClick = (tabName) => {
-        if (tabName === "dailyExpense") {
-          setShowLine_dailyExpense(true);
-          setShowLine_Budget(false);
-          setShowLine_Summary(false);
-        } else if (tabName === "budgetManagement") {
-          setShowLine_dailyExpense(false);
-          setShowLine_Budget(true);
-          setShowLine_Summary(false);
-        } else if (tabName === "summary") {
-          setShowLine_dailyExpense(false);
-          setShowLine_Budget(false);
-          setShowLine_Summary(true);
-        }
-      };
+                } else {
+                  console.log(data)
+                 
+                }
+            }
+            );
 
+    }, []);    
+
+    console.log("budget = ",info)
 
     return(
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
@@ -93,10 +102,12 @@ export default function Workspace_dailyexpense(){
             <Navbarbottom />
             <Scroll />
             <div className="mb-24">
+            {info.map((budget,index) => (     
+                <Category key={index} category_name = {budget.category_name} budget = {budget.budget} actual = {budget.actual} remaining = {budget.remaining} />
+            ))}
+                {/* <Category />
                 <Category />
-                <Category />
-                <Category />
-                <Category />
+                <Category /> */}
             </div>
             
             {/*<div className="flex flex-col items-center justify-center h-full mt-2">
