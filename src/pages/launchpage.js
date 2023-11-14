@@ -5,6 +5,7 @@ import Launchimage from '../../public/images/launchpage.jpg'
 import Uracha from '../../public/images/uracha.jpg'
 import Nichapat from '../../public/images/Nichapat.jpg'
 import Navbar from "../components/navbar";
+import Link from "next/link";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 
@@ -15,7 +16,7 @@ export default function Launchpage() {
             <div className="justify-center items-center flex flex-col h-full">
                 <Navbar/>
                 <div style={{width:'100%', padding:'0 30px'}} className="flex flex-col justify-center items-center">
-                    <Image alt="Launchimage" src={Launchimage} className="mt-4"></Image>  
+                    <Image alt="Launchimage" src={Launchimage} className="mt-4" priority="false"></Image>  
                     <div className="w-full text-purple-300 text-rubik font-normal mt-2">
                         <span style={{fontSize:'44px'}}>Manage</span>
                         <span style={{fontSize:'32px'}} className="ml-4">Your</span>
@@ -25,7 +26,9 @@ export default function Launchpage() {
                         <span style={{fontSize:'54px'}} className="flex">MONIE EIEI</span>
                     </div>
                     <div className="w-full mt-2 text-neutral-400 text-base font-normal font-['Rubik'] leading-relaxed">This expense tracker app will help you and your friend control your spending and saving in one place.</div>
-                    <button  type="submit" className=" h-[49px] mt-6 p-2 pl-6 pr-5 bg-[#D8B4F8] text-white rounded-lg hover:bg-[#CA8DFF] uppercase">Let’s Explore</button>
+                    <Link href="/workspace">
+                    <button  type="submit" className=" h-[49px] mt-6 p-2 pl-6 pr-5 bg-[#D8B4F8] text-white rounded-lg hover:bg-[#CA8DFF] uppercase">Go to workspace</button>
+                    </Link>
                     <div className="mt-16 text-purple-300 text-[32px] font-medium font-['Rubik']">Our Team Member</div>
                     <div className="justify-center items-center flex flex-col text-center mt-4">
                         <span className="text-black text-base font-normal font-['Rubik']">Nichapat Peasri</span>
