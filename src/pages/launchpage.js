@@ -3,6 +3,7 @@ import { Rubik } from 'next/font/google'
 import Image from "next/image";
 import Launchimage from '../../public/images/launchpage.jpg'
 import Uracha from '../../public/images/uracha.jpg'
+import Nichapat from '../../public/images/Nichapat.jpg'
 import Navbar from "../components/navbar";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
@@ -30,8 +31,8 @@ export default function Launchpage() {
                         <span className="text-black text-base font-normal font-['Rubik']">Nichapat Peasri</span>
                         <span className="text-black text-base font-normal font-['Rubik']">-</span>
                         <span className="text-purple-300 text-base font-normal font-['Rubik']">Design</span>
-                        <div className="mt-2 w-40 h-40 bg-zinc-300 rounded-full" >
-                            
+                        <div className="mt-2 w-40 h-40 bg-zinc-300 rounded-full relative" >
+                            <Image alt="Nichapat" src={Nichapat} className="absolute w-full h-full rounded-full object-cover"></Image>
                         </div>
                     </div>
                     <div className="justify-center items-center flex flex-col text-center mt-4">
