@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState,useEffect } from "react";
 import Link from 'next/link';
 import { Rubik } from 'next/font/google'
 import Navbar from "../components/navbar";
@@ -12,9 +12,69 @@ export default function Setting() {
     const [Key, setKey] = useState(false);
     const user_email = "UrachaRittikulsttichai@gmail.com";
     const Owner = "(You)";
+    const [info,setInfo] = useState([])
+
+
+    
+
+
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const workspaceId = localStorage.getItem("workspace_id");
+
+        const res = fetch("/api/setting/getmember", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+            body: JSON.stringify(({workspace_id:workspaceId})),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+
+                    console.log(data.success)
+                    // setInfo(data.getrate)
+                    let arraymember = []
+                        for ( let i=0 ; i< data.getworkspacemember.length; i++){
+                            const workspacemember = data.getworkspacemember[i];
+
+                                // Create a new object for each transaction
+                                const newWorkspaceMember = {
+                                    user_id: workspacemember.user_id,
+                                    user_username: workspacemember.user.user_username
+                                    
+                                };
+
+                                
+                                arraymember.push(newWorkspaceMember)
+                                
+                            
+                        }
+                        setInfo(arraymember)
+                    
+
+
+                } else {
+                  console.log(data)
+                  // setMessage(data.message)
+                  // setMessagestatus(false)
+                }
+            }
+            );
+
+    }, []);
+
+
+
     const closeModal = () => {
         setKey(false);
     };
+
+    console.log("setting info = ",info)
+
     return (
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
             <div className="flex flex-col items-center justify-center h-full md:mx-auto"> 
@@ -24,15 +84,23 @@ export default function Setting() {
                 <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage members on your workspace</div>
                 <div className="pt-8 justify-center items-center">
                 <div style={{fontSize: '20px'}} className="font-rubik font-medium text-black text-xl ml-10">Members</div>
-                    <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
-                        <div style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base flex flex-col ">{user_email}{Owner}</div>
-                    </div>
-                    <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
+
+
+                    { info.map((member,index) => (  
+                        <div className="inline-flex mt-2 w-full" key={index} >
+                      
+                        <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-0 rounded-full "> </div>
+                        <label style={{fontSize: '14px'}} className=" px-8  font-rubik font-normal text-black text-base ">{member.user_username}</label>
+                       
+                        </div>
+                    ))}
+
+                    {/* <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
                         <label style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base">User@gmail.com</label>
                     </div>
                     <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
                         <label style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base">User@gmail.com</label>
-                    </div>
+                    </div> */}
                     <Link href="/addmember">
                     <button 
                     type="button" 

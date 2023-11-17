@@ -9,32 +9,82 @@ const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function Addmember(){
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
-    const [workspaceName, setWorkspaceName] = useState('');
     const router = useRouter();
+    const [email, setEmail] = useState("");
+
+    const regexmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
 
 
+    const handleSubmit = () => {
+        const token = localStorage.getItem("token");
+        const workspaceId = localStorage.getItem("workspace_id");
+        const workspaceName = localStorage.getItem("workspace_name");
+        
+       if(email.length > 0 && regexmail.test(email) ){ 
 
+        const res = fetch("/api/setting/addmember", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+            body: JSON.stringify(({workspace_id:workspaceId ,email_member: email, workspace_name:workspaceName })),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                  
+                  setMessage(data.message)
+                  setMessagestatus(true)
 
-    const changeHandler = (e) => {
-        setWorkspaceName(e.target.value)
-     }
+                  setTimeout(() => {
+                    router.push("/setting");
+                }, 1000);
+                    
 
-    const movePage = ()=>{
-        if(workspaceName.length > 1){
-            router.push(`/createworkspace2?data=${encodeURIComponent(JSON.stringify(workspaceName))}`);
-        }
-        else{
-            setMessage("You should enter the workspace name first.")
-        }
+                } else {
+
+                  console.log(data)
+
+                  setMessage(data.message)
+                  setMessagestatus(false)
+                }
+            }
+            );
+        
+       }
+
+       else if( email.length === 0 && regexmail.test(email)){
+        setMessage("Please enter email")
+        setMessagestatus(false)
+       }    
+       else{
+        setMessage("The email format is incorrect.")
+        setMessagestatus(false)
+       }
+
     }
 
+
+
+
+    
+
+    const changeHandler = (e) =>{
+         setEmail(e.target.value)
+    }
+    
+
     const moveBack = ()=> {
-            router.push('/workspace')
+
+         router.push('/setting')
     }
 
 
     
 
+    console.log("email = ", email)
 
     return(
         
@@ -55,15 +105,15 @@ export default function Addmember(){
         <input className="mb-5 ml-14 h-10 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] placeholder-[#9B7C0D] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-normal" 
         placeholder="Ex. user@gmail.com" 
         type="text" 
-        id="workspacename"
-        name="workspacename"
+        id="emailmember"
+        name="email"
         onChange={changeHandler}
         required
          />
             </form>
         <div className="inline-flex">
         <button className="bg-[#FFFEF9] mt-10 ml-12 w-32 h-10 rounded-xl border-2 border-[#CA8DFF] text-[#CA8DFF] font-rubik text-sm hover:bg-[#CA8DFF] hover:text-[#FFFFFF]" onClick={()=>{moveBack()}}>BACK</button>
-        <button className="bg-[#D8B4F8] mt-10 ml-5  w-32 h-10 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" onClick={()=>{movePage()}}>ADD NOW</button>
+        <button className="bg-[#D8B4F8] mt-10 ml-5  w-32 h-10 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" onClick={()=>{handleSubmit()}}>ADD NOW</button>
         </div>
         </div>
         </div>
