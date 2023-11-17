@@ -162,7 +162,8 @@ export default function Setproportion() {
     }
     
     return (
-
+        
+        //pun thearem
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
             <div className="flex flex-col items-center justify-center h-full ">
                 <Navbar></Navbar>
