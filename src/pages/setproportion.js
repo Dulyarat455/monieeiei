@@ -56,6 +56,7 @@ export default function Setproportion(){
 
 
       const changeHandler = (e) => {
+        console.log("at changehandle")
           setInfo({ ...info, [e.target.name]: (parseFloat(e.target.value) || 0) });
         
      }
@@ -106,7 +107,8 @@ export default function Setproportion(){
      }
 
 
-
+    console.log("info percent0 = ",info["percent0"])
+    console.log("info percent1 = ",info["percent1"])
     console.log("setprop = ",info)
     return(
         
@@ -146,7 +148,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.5rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent0/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent0/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -162,7 +164,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent1/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent1/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -178,7 +180,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent2/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent2/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -194,7 +196,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent3/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent3/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -210,7 +212,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent4/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent4/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -226,7 +228,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent5/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent5/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -242,7 +244,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent6/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent6/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -258,7 +260,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent7/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent7/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -274,7 +276,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent8/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent8/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
@@ -290,7 +292,7 @@ export default function Setproportion(){
             </div>
             </div>
             <div className=" inline-flex  ml-[16.4rem] ">
-            <div className="  text-[#9B7C0D] text-[16px] font-normal">{info.budget_value*info.percent9/100}</div>
+            <div className="  text-[#9B7C0D] text-[16px] font-normal">{(isNaN(info.budget_value)? 0 : info.budget_value )*info.percent9/100}</div>
             <div className=" ml-[3.5rem] text-[#9B7C0D] text-[16px] font-normal absolute">THB</div>
             </div>
             </div>
