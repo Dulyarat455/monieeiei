@@ -76,7 +76,7 @@ export default function Workspace() {
                 <div className="flex flex-col items-center justify-center h-full pt-4">
 
 
-                 {(info.length > 1) ? 
+                 {(info.length > 0) ? 
 
                     info.map((workspace,index) => (
 
