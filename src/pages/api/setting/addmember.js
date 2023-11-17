@@ -95,7 +95,8 @@ export default  async  function addmember (req,res)  {
                 ] ).toArray();
 
                 let resultNoti
-
+                let resultNotimember
+                
                 if( getworkspacemember.length > 0){
 
                 for (let j=0 ; j < getworkspacemember.length; j++){
@@ -116,7 +117,7 @@ export default  async  function addmember (req,res)  {
 
               }
 
-              const resultNotimember = await notifications.insertOne({
+               resultNotimember = await notifications.insertOne({
 
                 user_id: getuser.user_id,
                 notification_id: count_notification,
