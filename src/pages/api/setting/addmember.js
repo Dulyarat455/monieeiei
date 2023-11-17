@@ -96,7 +96,7 @@ export default  async  function addmember (req,res)  {
 
                 let resultNoti
                 let resultNotimember
-                
+
                 if( getworkspacemember.length > 0){
 
                 for (let j=0 ; j < getworkspacemember.length; j++){
@@ -135,7 +135,7 @@ export default  async  function addmember (req,res)  {
 
 
 
-                if(result && resultNoti &&resultNotimember){
+                if(result && resultNoti && resultNotimember){
                     return( res.status(200).json({ message: 'Add member success', success: true}))
                     
                 }

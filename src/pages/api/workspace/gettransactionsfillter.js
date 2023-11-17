@@ -41,12 +41,12 @@ export default  async  function gettransactionsfillter (req,res)  {
                 const user = client.db('monieeiei').collection('User');
                 let queryData = [] ;
 
-                queryData.push({$match: {
-                      $or: [
-                        { 'user_id': user_id },
-                        { 'tran_member': user_id}
-                      ]
-                    }})
+                // queryData.push({$match: {
+                //       $or: [
+                //         { 'user_id': user_id },
+                //         { 'tran_member': user_id}
+                //       ]
+                //     }})
 
                 queryData.push({ $match: {
                     'workspace_id': workspace_id

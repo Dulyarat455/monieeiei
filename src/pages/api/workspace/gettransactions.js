@@ -42,14 +42,14 @@ export default  async  function gettransactions (req,res)  {
              
 
                 let gettransactions = await transactions.aggregate( [
-                  {
-                    $match: {
-                      $or: [
-                        { 'user_id': user_id },
-                        { 'tran_member': user_id}
-                      ]
-                    }
-                  },
+                  // {
+                  //   $match: {
+                  //     $or: [
+                  //       { 'user_id': user_id },
+                  //       { 'tran_member': user_id}
+                  //     ]
+                  //   }
+                  // },
                   {
                     $match: {
                         'workspace_id': workspace_id
