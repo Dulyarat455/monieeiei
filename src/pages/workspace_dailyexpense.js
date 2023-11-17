@@ -17,9 +17,9 @@ export default function Workspace_dailyexpense(){
     const [info, setInfo] = useState([]);
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
+    const [tranSearch, setTranSearch] = useState("")
     const [fillter, setFillter] = useState({
         workspace_id: "",
-        tran_name: "",
         dateIn: "",
         dateOut: ""
       });
@@ -151,6 +151,15 @@ export default function Workspace_dailyexpense(){
         }  
 
     }
+    const searchTran = (e) => {
+        setTranSearch(e.target.value)
+    }
+
+    const searchWord = (textToSearch, searchString) => {
+        // Case-insensitive search for the searchString in the textToSearch
+        const regex = new RegExp(searchString, 'i');
+        return regex.test(textToSearch);
+      };
 
     // console.log("info = ",info)
     // console.log("fillter = ",fillter)
@@ -173,7 +182,7 @@ export default function Workspace_dailyexpense(){
                     type="text"
                     id="tran_name"
                     name="tran_name"
-                    onChange={changeHandler}
+                    onChange={searchTran}
                     />
 
                     <button className="absolute right-11 translate-y-2 items-center" onClick={handleIconClick}>
@@ -218,7 +227,7 @@ export default function Workspace_dailyexpense(){
             <Button/>
             <Scroll/>
             <div className="mt-4 mb-24">
-            {info.map((tran,index) => ( 
+            {tranSearch.length === 0  && info.map((tran,index) => ( 
                 
                 <Transaction key={index} tran_name = {tran.tran_name}  tran_type = {tran.tran_type} 
                 username_member = {tran.username_member} count_member = {tran.count_member} 
@@ -228,17 +237,17 @@ export default function Workspace_dailyexpense(){
                 
             ))}
 
-                {/* <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/> */}
+            {tranSearch.length > 0  && info.map((tran,index) => ( 
+                
+                (searchWord(tran.tran_name,tranSearch) === true && <Transaction key={index} tran_name = {tran.tran_name}  tran_type = {tran.tran_type} 
+                username_member = {tran.username_member} count_member = {tran.count_member} 
+                pocket_name = {tran.pocket_name} category_name = {tran.category_name} amount = {tran.amount} 
+                bought_date = {tran.bought_date} photo = {tran.photo} owner_name = {tran.owner_name} 
+                owner_id = {tran.owner_id} transworkspace_id = {tran.transworkspace_id} />)
+                
+            ))}
+
+                
             </div>
             
             {/*<div className="flex flex-col items-center justify-center h-full mt-2">

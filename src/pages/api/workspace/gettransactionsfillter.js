@@ -22,7 +22,6 @@ export default  async  function gettransactionsfillter (req,res)  {
 
     const { 
         workspace_id,
-        tran_name,
         dateIn,
         dateOut   
           } = req.body;
@@ -53,11 +52,11 @@ export default  async  function gettransactionsfillter (req,res)  {
                     'workspace_id': workspace_id
                    }})
 
-                if(tran_name !== "" && tran_name !== null ){
-                    console.log("search name")
-                    // use for word in collection "topic_name"
-                    queryData.push({'$match': {"tran_name":{ $regex: tran_name }}})
-                }
+                // if(tran_name !== "" && tran_name !== null ){
+                //     console.log("search name")
+                //     // use for word in collection "topic_name"
+                //     queryData.push({'$match': {"tran_name":{ $regex: tran_name }}})
+                // }
                 
                 if(dateIn && dateOut){
                     queryData.push( {
