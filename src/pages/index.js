@@ -1,13 +1,23 @@
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+
 import Image from 'next/image'
 import { Rubik } from 'next/font/google'
 import logo from  '../../public/images/logo.png'
 import nameweb from  '../../public/images/nameweb.png'
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
-import { useRouter } from "next/router";
+
 
 export default function Home() {
   const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if(token){
+      router.push("/workspace");
+    }
+  }, []);
 
   const  moveRegister  =  (e) => {
       router.push("/register");

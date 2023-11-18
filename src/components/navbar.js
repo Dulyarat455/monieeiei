@@ -1,4 +1,6 @@
 import React, {useState,useEffect} from "react";
+import { useRouter } from "next/router";
+
 import Link from 'next/link';
 import Image from "next/image";
 import noti from '../../public/images/noti.svg'
@@ -8,12 +10,16 @@ import logo2 from '../../public/images/logo2.png'
 
 
 export default function Navbar  (){
+    const router = useRouter();
     const [countNotification, setCountNotification] = useState(0);
      // State to manage the visibility of the dropdown
      const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
+        if(!token){
+            router.push("/");
+          }
         const res = fetch("/api/getnumnotification", {
             method: "GET",
             headers: {
@@ -63,7 +69,17 @@ export default function Navbar  (){
             );
     };
 
-
+    const logout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("owner_status");
+        localStorage.removeItem("workspace_name");
+        localStorage.removeItem("workspace_id");
+        // window.location.reload();
+        
+        
+          
+       
+      };
 
    
 
@@ -95,13 +111,13 @@ export default function Navbar  (){
                     {/* Dropdown Content */}
                     {isDropdownOpen && (
                         <div style={{ left: "-55%" }} className="absolute top-12 bg-white shadow-xl rounded-[0.3rem] border-[1px] border-[#CA8DFF] py-1 mt-3">
-                            <Link href={"/profile"}>
+                            <Link href={"/account"}>
                                 <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF]  hover:bg-[#D8B4F8] hover:text-white">Profile</div>
                             </Link>
                             <Link href={"/launchpage"}>
                                 <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">About us</div>
                             </Link>
-                            <Link href={"/logout"}>
+                            <Link href={"/"} onClick={()=>{logout()}}>
                                 <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">Log out</div>
                             </Link>
                         </div>
