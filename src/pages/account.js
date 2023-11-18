@@ -140,7 +140,7 @@ export default function Account(){
                         type="text" 
                         id="user_firstname" 
                         name="user_firstname"
-                        defaultValue={info['user_firstname']}
+                        value={info['user_firstname']}
                         onChange={changeHandler}
                         >
                         </input>
@@ -150,7 +150,7 @@ export default function Account(){
                         type="text" 
                         id="user_lastname" 
                         name="user_lastname" 
-                        defaultValue={info['user_lastname']}
+                        value={info['user_lastname']}
                         onChange={changeHandler}
                         >
                         </input>
@@ -160,7 +160,7 @@ export default function Account(){
                         type="date" 
                         id="user_DOB" 
                         name="user_DOB"
-                        defaultValue={info['user_DOB']}
+                        value={info['user_DOB']}
                         onChange={changeHandler}
                          >
                         </input>
@@ -170,7 +170,7 @@ export default function Account(){
                         type="tel" 
                         id="user_phonenumber" 
                         name="user_phonenumber"
-                        defaultValue={info['user_phonenumber']} 
+                        value={info['user_phonenumber']} 
                         onChange={changeHandler}
                         >
                         </input>
@@ -180,7 +180,7 @@ export default function Account(){
                         type="email" 
                         id="user_email" 
                         name="user_email"
-                        defaultValue={info['user_email']}
+                        value={info['user_email']}
                         onChange={changeHandler}
                          >
                         </input>
