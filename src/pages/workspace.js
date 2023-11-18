@@ -71,8 +71,7 @@ export default function Workspace() {
             <Navbar/> 
             </div>
                 <div style={{fontSize: '32px', color: '#1E1E1E'}} className="text-[#1E1E1E] font-medium font-rubik mt-4 ml-10 items-center justify-center">Workspace</div>
-                <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">Manage your workspace finances with</div>
-                <div className="ml-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
+                <div className="ml-10 me-10 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center sm:w-5/5 md:w-4/5 lg:w-1/5 ">Manage your workspace finances with friends and family</div>
                 <div className="flex flex-col items-center justify-center h-full pt-4">
 
 

@@ -114,8 +114,7 @@ export default function Workspace_dailyexpense(){
             <Navbar/> {/* Change Navbar to workspace */}
             </div>
             <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-8 flex">Workspace</div>
-            <div className="ml-8 font-normal font-rubik text-[#A7A7A7]">Manage your workspace finances with</div>
-            <div className="ml-8 font-normal text-base font-rubik text-[#A6A6A6] items-center justify-center">friends and family</div>
+            <div className="ml-8 me-8 font-normal font-rubik text-[#A7A7A7]">Manage your workspace finances with friends and family</div>
             
             <Slidebar/>
             <div style={{width:'screen', justifyContent:'space-between', padding:'0 30px'}} className="flex mt-4 gap-2 justify-center items-center">

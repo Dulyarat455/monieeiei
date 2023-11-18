@@ -94,15 +94,15 @@ export default function Navbar  (){
                     </div>
                     {/* Dropdown Content */}
                     {isDropdownOpen && (
-                        <div className="absolute top-12 bg-white shadow-xl rounded-[0.3rem] border-[1px] border-[#CA8DFF] py-1 mt-3">
+                        <div style={{ left: "-55%" }} className="absolute top-12 bg-white shadow-xl rounded-[0.3rem] border-[1px] border-[#CA8DFF] py-1 mt-3">
                             <Link href={"/profile"}>
-                                <div className="inline-block px-2 py-4 text-[#CA8DFF]  hover:bg-[#D8B4F8] hover:text-white">Profile</div>
+                                <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF]  hover:bg-[#D8B4F8] hover:text-white">Profile</div>
                             </Link>
                             <Link href={"/launchpage"}>
-                                <div className="inline-block px-2 py-4 text-[0.7rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">About us</div>
+                                <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">About us</div>
                             </Link>
                             <Link href={"/logout"}>
-                                <div className="inline-block px-2 py-4 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">Log out</div>
+                                <div className="inline-block w-full px-2 py-2 text-[0.82rem] text-[#CA8DFF] hover:bg-[#D8B4F8] hover:text-white">Log out</div>
                             </Link>
                         </div>
                     )}
