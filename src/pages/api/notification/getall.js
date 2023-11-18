@@ -45,7 +45,7 @@ export default  async  function getall (req,res)  {
                 
 
                 if(getall.length > 0){
-                    return( res.status(200).json({ message: 'Get notifications  success',getall, success: true}))
+                    return( res.status(200).json({ message: 'Get notifications  success',getall: getall.reverse(), success: true}))
                     
                 }
 
