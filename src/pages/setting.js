@@ -5,15 +5,15 @@ import Navbar from "../components/navbar";
 import Navbarbottom from "../components/navbarbottom";
 import Deletemodal from "../components/deletemodal";
 import { useRouter } from "next/router";
+import jwt from 'jsonwebtoken';
+
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 
 export default function Setting() {
     const router = useRouter();
     const [Key, setKey] = useState(false);
-    const user_email = "UrachaRittikulsttichai@gmail.com";
-    const Owner = "(You)";
     const [info,setInfo] = useState([])
-
+    const [user_id, setUser_Id] = useState("");  
 
     
 
@@ -22,6 +22,11 @@ export default function Setting() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         const workspaceId = localStorage.getItem("workspace_id");
+
+        
+        const decoded =   jwt.decode(token)
+        const { user_id } = decoded || {};
+        setUser_Id(user_id)
 
         const res = fetch("/api/setting/getmember", {
             method: "POST",
@@ -90,8 +95,8 @@ export default function Setting() {
                         <div className="inline-flex mt-2 w-full" key={index} >
                       
                         <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-0 rounded-full "> </div>
-                        <label style={{fontSize: '14px'}} className=" px-8  font-rubik font-normal text-black text-base ">{member.user_username}</label>
-                       
+                        {user_id === member.user_id  && <label style={{fontSize: '14px'}} className=" px-8  font-rubik font-normal text-black text-base ">{member.user_username} {"(You)"}</label>}
+                        {user_id !== member.user_id  && <label style={{fontSize: '14px'}} className=" px-8  font-rubik font-normal text-black text-base ">{member.user_username}</label>}
                         </div>
                     ))}
 
