@@ -18,6 +18,9 @@ export default function Setproportion() {
         const token = localStorage.getItem("token");
         const workspaceId = localStorage.getItem("workspace_id");
 
+        if(!token){
+            router.push("/");
+          }
         const res = fetch("/api/budget/getrate", {
             method: "POST",
             headers: {
@@ -136,7 +139,7 @@ export default function Setproportion() {
         // )
 
         elems.push(
-            <div className="w-screen flex flex-col px-8 gap-4 h-max">
+            <div key={idx} className="w-screen flex flex-col px-8 gap-4 h-max">
                 <div className="flex w-full h-max text-[#9B7C0D] text-[24px] font-normal">
                     <div className=" mr-auto h-max flex flex-wrap w-4/5 break-words  px-2">
                         <div className="w-full h-max">{category}</div>
