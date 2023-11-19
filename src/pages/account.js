@@ -18,7 +18,8 @@ export default function Account(){
         user_lastname: "",
         user_DOB:"",
         user_phonenumber:"",
-        user_email:""
+        user_email:"",
+        user_username:""
 
       });
       //verify
@@ -47,7 +48,8 @@ export default function Account(){
                     ["user_phonenumber"]: data.getAccount['user_phonenumber'], 
                     ["user_firstname"]: data.getAccount['user_firstname'],
                     ["user_lastname"]: data.getAccount['user_lastname'],
-                    ["user_DOB"]: data.getAccount['user_DOB']
+                    ["user_DOB"]: data.getAccount['user_DOB'],
+                    ["user_username"]: data.getAccount['user_username']
                  });
 
                 // setMessage(data.message);
@@ -184,10 +186,25 @@ export default function Account(){
                         onChange={changeHandler}
                          >
                         </input>
+                        <label htmlFor="email" className="ml-2 text-[#A7A7A7] text-xs">MY USERNAME</label><br></br>
+                        <input className="mb-2 ml-2 h-8 w-[16rem] rounded-lg border-[1px] border-opacity-30 bg-[#FFFEF9] border-[#757575] focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:ring-opacity-60 placeholder-[#A7A7A7] placeholder:font-rubik pl-5 placeholder:text-[13px] placeholder:font-light flex" 
+                        placeholder="Johny.Gates@gmail.com" 
+                        type="text" 
+                        id="user_username" 
+                        name="user_username"
+                        value={info['user_username']}
+                        onChange={changeHandler}
+                         >
+                        </input>
                         <Link href="/changepassword" className="ml-40 mt-1 text-[10px] mb-2 font-normal flex text-[#9747FF]">Change my password</Link>
 
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <button type="button" className="bg-[#D8B4F8] mx-auto mt-2 ml-18 w-24 h-10 rounded-xl text-white font-rubik text-sm hover:bg-[#CA8DFF]" onClick={()=>{submitHandler()}}>UPDATE</button>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
                         </div>
                     </form>
                 </div>
