@@ -14,6 +14,7 @@ export default function Setting() {
     const [Key, setKey] = useState(false);
     const [info,setInfo] = useState([])
     const [user_id, setUser_Id] = useState("");  
+    const [owner_status, setOwner_status] = useState(0);
 
     
 
@@ -22,8 +23,8 @@ export default function Setting() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         const workspaceId = localStorage.getItem("workspace_id");
-
-        
+        const ownerStatus = parseInt(localStorage.getItem("owner_status"));
+        setOwner_status(ownerStatus)
         const decoded =   jwt.decode(token)
         const { user_id } = decoded || {};
         setUser_Id(user_id)
@@ -79,6 +80,7 @@ export default function Setting() {
     };
 
     console.log("setting info = ",info)
+    console.log("ownerStatus = ",owner_status)
 
     return (
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
@@ -106,13 +108,14 @@ export default function Setting() {
                     <div className="w-6 h-6 bg-[#D8B4F8] ml-12 mt-2 rounded-full">
                         <label style={{fontSize: '14px'}} className="px-8 font-rubik font-normal text-black text-base">User@gmail.com</label>
                     </div> */}
-                    <Link href="/addmember">
+                    {owner_status === 1 && <Link href="/addmember">
                     <button 
                     type="button" 
                     className=" mt-6 ml-12 p-2 pl-6 pr-5 border-2 border-CA8DFF text-[#C98DFF] text-sm font-medium rounded-md hover:bg-[#CA8DFF] hover:text-white" >
                         ADD A MEMBERS
                     </button>
-                    </Link>
+                    </Link>}
+                    {owner_status === 1 && <div>
                     <div style={{fontSize: '20px'}} className="mt-8 font-rubik font-medium text-black text-xl items-center justify-center ml-10">Workspace</div>
                     <button 
                     type="button" 
@@ -120,9 +123,10 @@ export default function Setting() {
                     onClick={()=> setKey(true)}>
                         DELETE A WORKSPACE 
                     </button>
+                    </div>}
                     <Navbarbottom/>
                 </div>
-                <Deletemodal isVisible={Key} onClose={closeModal} />
+                    <Deletemodal isVisible={Key} onClose={closeModal} />
         </div>
 
     )
