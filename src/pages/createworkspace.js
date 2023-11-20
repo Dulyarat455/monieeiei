@@ -44,7 +44,7 @@ export default function Createworkspace(){
         <div className=" w-[23.5rem] h-screen bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-24 text-5xl">Create&nbsp;a</div>
-            <button><Image alt="Icon" src={Icon} className=" ml-12 mt-14"></Image></button>
+            <button onClick={()=>{router.push("/workspace")}}><Image alt="Icon" src={Icon} className=" ml-12 mt-14"></Image></button>
             </div>
             <div className="font-rubik text-5xl ml-[4.3rem] mt-3">Workspace</div>
             <div className=" mt-14"></div>

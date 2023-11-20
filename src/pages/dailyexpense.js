@@ -271,8 +271,8 @@ export default function Dailyexpense(){
         <div class="  w-[23.5rem] h-full bg-[#FAE392] rounded-t-[36px] mt-10">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 text-[32px] font-[500] ml-20">Daily Expense</div>
-            <Link href="https://www.youtube.com/watch?v=nlPYear59oQ">
-            <Image alt="Icon" src={Icon} className="ml-10 mt-12"></Image> 
+            <Link href="/workspace_dailyexpense">
+                <Image   alt="Icon" src={Icon} className="ml-10 mt-12"></Image> 
             </Link>
             </div>
             <div className=" text-[400] text-[#9B7C0D] text-[20px] ml-24">{day} {month} {year}</div> {/*ใส่วันที่*/}

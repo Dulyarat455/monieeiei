@@ -12,6 +12,7 @@ import Listnoti2 from "@/components/listnoti2";
 import Transactionmodal from "@/components/transactionmodal";
 const inter = Rubik({ subsets: ['latin'],weight:['400'] })
 export default function Notification(){
+    const router = useRouter();
     const [info , setInfo] = useState([])
 
     //set formatdate
@@ -78,6 +79,11 @@ export default function Notification(){
 
     }, []);
 
+    const moveBeforePage = () => {
+        const beforepath = localStorage.getItem("beforepath");
+        router.push(beforepath)
+    }
+
     return(
         
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
@@ -86,7 +92,7 @@ export default function Notification(){
         <div className="min-h-screen w-screen  bg-[#FAE392] rounded-t-[36px] mt-10 ">
             <div className=" inline-flex">
             <div className="font-rubik mt-10 ml-16 text-[500] text-[32px]">Last Notification</div>
-            <button><Image alt="Icon" src={Icon} className=" ml-5 mt-10"></Image></button>
+            <button onClick={()=>{moveBeforePage()}}><Image alt="Icon" src={Icon} className=" ml-5 mt-10"></Image></button>
             </div>
 
        

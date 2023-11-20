@@ -11,6 +11,7 @@ import logo2 from '../../public/images/logo2.png'
 
 export default function Navbar  (){
     const router = useRouter();
+    const currentPath = router.asPath;
     const [countNotification, setCountNotification] = useState(0);
      // State to manage the visibility of the dropdown
      const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -20,6 +21,10 @@ export default function Navbar  (){
         if(!token){
             router.push("/");
           }
+
+        if(currentPath !== "/notification"){
+            localStorage.setItem("beforepath",currentPath);
+        }
         const res = fetch("/api/getnumnotification", {
             method: "GET",
             headers: {
