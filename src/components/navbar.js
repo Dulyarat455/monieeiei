@@ -91,11 +91,11 @@ export default function Navbar  (){
     return(
         <nav>
           <div className="inline-flex mt-4">
-            <Link href={"/private"}>
+            {/* <Link href={"/private"}> */}
                 <div>
                     <Image src={logo2} alt="logo2" width={50} className="ml-4"/>
                 </div>
-            </Link>
+            {/* </Link> */}
             <Link href={"/notification"} onClick={()=>{setReadStatus()}}>
                 <div>
                     <Image src={noti} alt="noti" width={20} className=" mt-3 ml-40"/>
