@@ -18,6 +18,7 @@ export default function Workspace_dailyexpense(){
     const [message, setMessage] = useState("");
     const [messagestatus, setMessagestatus] = useState(false);
     const [tranSearch, setTranSearch] = useState("")
+    const [workspaceName,setWorkspaceName] = useState("")
     const [fillter, setFillter] = useState({
         workspace_id: "",
         dateIn: "",
@@ -27,6 +28,8 @@ export default function Workspace_dailyexpense(){
     useEffect(() => {
         const token = localStorage.getItem("token");
         const workspaceId = localStorage.getItem("workspace_id");
+        const getworkspaceName = localStorage.getItem("workspace_name");
+        setWorkspaceName(getworkspaceName)
         setFillter({ ...fillter, ["workspace_id"]: workspaceId });
         const res = fetch("/api/workspace/gettransactions", {
             method: "POST",
@@ -169,7 +172,7 @@ export default function Workspace_dailyexpense(){
             <div className="flex flex-col items-center justify-center h-full ">
             <Navbar/> {/* Change Navbar to workspace */}
             </div>
-            <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-8 flex">Workspace</div>
+            <div className="text-[#1E1E1E] text-[32px] font-medium font-rubik mt-4 ml-8 flex">{workspaceName}</div>
             <div className="ml-8 me-8 font-normal font-rubik text-[#A7A7A7]">Manage your workspace finances with friends and family</div>
             
             <Slidebar/>
