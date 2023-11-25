@@ -110,7 +110,8 @@ export default function Workspace_dailyexpense(){
    
     console.log("suminfo = ",info);
     console.log("sumfillter = ",fillter)
-
+    //console
+    
     return(
         <div className={`min-h-screen bg-[#FFFEF9] ${inter.className}`}>
             <div className="flex flex-col items-center justify-center h-full ">
