@@ -84,7 +84,7 @@ export default function Account(){
             setMessagestatus(false)
         }
         else if( !info['user_firstname'] || !info['user_lastname'] || !info['user_DOB'] || 
-        !info['user_phonenumber'] || !info['user_email']
+        !info['user_phonenumber'] || !info['user_email'] || !info['user_username']
         ){
             setMessage("You haven't filled in all your information yet..")
             setMessagestatus(false)
